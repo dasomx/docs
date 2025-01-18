@@ -1,0 +1,92 @@
+---
+title: Tools Integration
+description: Learn how to integrate external APIs and services with OKChat AI's Language Learning Model (LLM) to enhance your chatbot's functionality.
+---
+
+## Introduction
+
+OKChat AI allows you to integrate various tools with its Language Learning Model (LLM) to enhance the functionality and responsiveness of your chatbot. These tools enable your chatbot to interact with external APIs and services, providing users with real-time information and dynamic responses.
+
+## Overview of Tools Integration
+
+### What are Tools?
+
+Tools in OKChat AI are configurations that allow your chatbot to interact with external APIs. These tools can fetch data, perform actions, and provide enriched responses based on user queries.
+
+### Benefits of Tools Integration
+
+- **Enhanced Functionality**: Access real-time data and perform complex operations.
+- **Dynamic Responses**: Provide users with up-to-date information.
+- **Customization**: Tailor the chatbot's capabilities to meet specific needs.
+
+## Setting Up Tools
+
+### Step 1: Access Tools Management
+
+1. **Log in to OKChat AI**: Access your OKChat AI dashboard.
+2. **Navigate to Tools Management**: Go to the "Tools" section under "Integration."
+
+### Step 2: Create a New Tool
+
+1. **Add a New Tool**: Click on "Add Tool" to create a new tool configuration.
+2. **General Settings**:
+   - **Name**: Provide a name for the tool (e.g., "Weather").
+   - **Description**: Add a brief description of the tool's purpose.
+   - **Base URL**: Enter the base URL of the external API (e.g., `https://wttr.in`).
+
+### Step 3: Configure Authentication
+
+1. **Select Authentication Type**: Choose the appropriate authentication method (e.g., None, Bearer Token, Basic Auth, API Key).
+2. **Enter Credentials**: Provide the necessary credentials if required.
+
+### Step 4: Define Endpoints
+
+1. **Add Endpoint**: Click on "Add Endpoint" to define the API endpoint.
+   - **Name**: Name the endpoint (e.g., "Get Weather").
+   - **Method**: Select the HTTP method (e.g., GET).
+   - **Path**: Define the path with parameters (e.g., `/{location}?format=j1`).
+   - **Description**: Describe the endpoint's function.
+2. **Path Parameters**: Use curly braces to define path parameters (e.g., `{location}`).
+3. **Query Parameters**: Add any necessary query parameters.
+
+### Step 5: Save and Activate
+
+1. **Save Changes**: Ensure all configurations are saved.
+2. **Activate Tool**: Toggle the tool to active status.
+
+## Example: Weather Tool Integration
+
+### Step 1: Create Weather Tool
+
+- **Name**: Weather
+- **Description**: Get current weather information.
+- **Base URL**: `https://wttr.in`
+
+### Step 2: Configure Authentication
+
+- **Authentication Type**: None
+
+### Step 3: Define Endpoint
+
+- **Name**: Get Weather
+- **Method**: GET
+- **Path**: `/{location}?format=j1`
+- **Description**: Fetch weather data for a specified location.
+
+### Step 4: Save and Test
+
+- **Save Changes**: Save the tool configuration.
+- **Test Endpoint**: Use the chatbot to test the weather tool by querying the weather for a specific location (e.g., "What's the weather in Mandalay?").
+
+## Best Practices
+
+- **API Documentation**: Refer to the external API's documentation for accurate endpoint and parameter details.
+- **Error Handling**: Implement error handling to manage API failures gracefully.
+- **Rate Limits**: Be aware of API rate limits and configure your tool accordingly.
+- **Security**: Use secure authentication methods and protect sensitive credentials.
+
+## Conclusion
+
+Integrating tools with OKChat AI's LLM significantly enhances your chatbot's capabilities, allowing it to provide dynamic and real-time responses. By following this guide, you can set up and manage tools effectively, ensuring a seamless user experience.
+
+For further assistance, refer to the OKChat AI support resources or contact our support team.

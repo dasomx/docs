@@ -1,0 +1,96 @@
+---
+title: AI Voice Agent
+description: Learn how to enable voice-based interactions with your chatbot using the AI Voice Agent feature in OKChat AI.
+---
+
+## Introduction
+
+The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based interactions with your chatbot. This feature allows users to engage with the chatbot using voice commands, making it ideal for hands-free operations and voice-activated devices. Please note that this is a preview feature and is not yet available to all users. For access, please reach out to **info@dasomx.com**.
+
+---
+
+## Key Features
+
+- **Voice Interaction**: Users can speak to the chatbot, and the AI Voice Agent will respond with voice output.
+- **Customizable Voice Widget**: Customize the appearance, voice, and behavior of the voice widget to match your brand.
+- **Real-Time Speech Recognition**: The AI Voice Agent uses advanced speech recognition to understand and process user commands.
+- **Dynamic Responses**: The chatbot can provide real-time, context-aware responses based on user input.
+
+---
+
+## Getting Started with AI Voice Agent
+
+### 1. **Accessing the AI Voice Agent**
+
+- Log in to your OKChat AI dashboard.
+- Navigate to the **AI Voice Agent Widget** section under **Integration**.
+- If you do not see this option, contact **info@dasomx.com** to request access to the preview feature.
+
+### 2. **Configuring the Voice Widget**
+
+- Customize the voice widget to suit your needs:
+  - **Avatar**: Choose an avatar for the voice widget.
+  - **Text**: Customize the text displayed in the widget.
+  - **Appearance**: Adjust the widget's visual appearance (e.g., colors, size).
+  - **Voice**: Select the voice type and tone for the AI Voice Agent.
+
+### 3. **Voice Activity Detection (VAD) Settings**
+
+- **VAD Threshold**: Adjust the sensitivity of speech detection (default: 0.5). Lower values make the widget more sensitive to speech.
+- **Prefix Padding (ms)**: Set the minimum duration of speech required to start a new speech chunk (default: 500ms).
+- **Silence Duration (ms)**: Define the minimum duration of silence before ending the speech segment (default: 1000ms).
+
+### 4. **Response Settings**
+
+- **Temperature**: Adjust the randomness of the AI's responses (default: 0.7). Higher values make responses more creative, while lower values make them more deterministic.
+- **Max Output Tokens**: Limit the length of the chatbot's responses (default: 2048 tokens). One token roughly corresponds to one word.
+
+### 5. **Embedding the Voice Widget**
+
+- Copy the embed code provided in the widget configuration section.
+- Paste the code into your website's HTML to enable the voice widget.
+- Example embed code:
+  ```html
+  <script
+    src="http://localhost:3000/chatbot-voice-widget.js"
+    data-chatbot-id="5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+  ></script>
+  ```
+
+---
+
+## Use Cases
+
+- **Customer Support**: Provide voice-based customer support for users who prefer speaking over typing.
+- **Hands-Free Interaction**: Enable voice commands for users in environments where typing is inconvenient (e.g., driving, cooking).
+- **Accessibility**: Improve accessibility for users with disabilities by offering a voice-based interface.
+
+---
+
+## Best Practices
+
+- **Test Thoroughly**: Test the voice widget in different environments to ensure accurate speech recognition.
+- **Optimize VAD Settings**: Adjust the VAD threshold, prefix padding, and silence duration to match your use case.
+- **Monitor Performance**: Regularly review the chatbot's responses and adjust the temperature and max output tokens as needed.
+- **User Guidance**: Provide clear instructions to users on how to interact with the voice widget.
+
+---
+
+## Troubleshooting
+
+- **Voice Widget Not Responding**:
+  - Ensure the embed code is correctly placed in your website's HTML.
+  - Check the VAD settings to ensure the widget is sensitive enough to detect speech.
+- **Inaccurate Responses**:
+  - Adjust the temperature setting to control the randomness of responses.
+  - Review the max output tokens to ensure responses are not too long or too short.
+- **Access Issues**:
+  - If you do not see the AI Voice Agent option in your dashboard, contact **info@dasomx.com** to request access.
+
+---
+
+## Conclusion
+
+The AI Voice Agent is a powerful preview feature that brings voice-based interaction to your OKChat AI chatbot. By customizing the voice widget and configuring the settings, you can create a seamless and engaging experience for your users. For access to this feature, reach out to **info@dasomx.com**.
+
+For further assistance, refer to the OKChat AI support resources or contact our support team.

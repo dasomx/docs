@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "OKCHAT AI V2 Docs",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/primary.svg",
+    "light": "/logo/black-bg.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/mascot-gradient.svg",
   "colors": {
-    "primary": "#0D9373",
+    "primary": "#5737CF",
     "light": "#07C983",
     "dark": "#0D9373",
     "anchors": {
@@ -18,34 +18,24 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:info@dasomx.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "App",
+    "url": "https://v2.okchat.ai"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
+  "tabs": [],
   "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
     {
       "name": "Community",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "#"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "#"
     }
   ],
   "navigation": [
@@ -54,38 +44,33 @@
       "pages": [
         "introduction",
         "quickstart",
-        "development"
+        "guides/knowledge-base",
+        "guides/social-media-integration",
+        "guides/chatbot-widget",
+        "guides/ai-voice-agent",
+        "guides/leads",
+        "guides/tools"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Social Media",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "social-media/facebook-messenger",
+        "social-media/instagram",
+        "social-media/whatsapp",
+        "social-media/kakao",
+        "social-media/line",
+        "social-media/naver-talk"
       ]
     },
     {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "Plugins",
+      "pages": ["plugins/discord", "plugins/slack", "plugins/cal"]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "x": "https://x.com/okchatai",
+    "github": "https://github.com/dasomx",
+    "linkedin": "https://linkedin.com/company/dasomx"
   }
 }
