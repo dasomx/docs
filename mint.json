@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "OKCHAT AI V2 Docs",
   "logo": {
-    "dark": "/logo/primary.svg",
-    "light": "/logo/black-bg.svg"
+    "dark": "/images/logo/primary.svg",
+    "light": "/images/logo/black-bg.svg"
   },
-  "favicon": "/logo/mascot-gradient.svg",
+  "favicon": "/images/logo/mascot-gradient.svg",
   "colors": {
     "primary": "#5737CF",
     "light": "#07C983",
