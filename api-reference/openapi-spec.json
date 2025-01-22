@@ -1387,7 +1387,333 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "Example",
+            "headers": {
+              "CF-RAY": {
+                "schema": {
+                  "type": "string",
+                  "example": "905cd0e6ccdb0d67-SIN"
+                }
+              },
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "public, max-age=0, must-revalidate"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Content-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "br"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 22 Jan 2025 04:31:45 GMT"
+                }
+              },
+              "NEL": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+                }
+              },
+              "Report-To": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=SNOs6bk40kjb4WIDWfpzn0tIhqOcRC9Fb9tmYeGu6q4Vgu45%2BHQdAOhbWuQ6EPnsSDwTo3EjJL3DEOCpiwdCo6UwbsyF6bjwJoWaB%2FTZivDN7pfVMfwE0CR8zqEZZiY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+                }
+              },
+              "Server": {
+                "schema": {
+                  "type": "string",
+                  "example": "cloudflare"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "access-control-allow-credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "access-control-allow-headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "access-control-allow-methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "access-control-allow-origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "alt-svc": {
+                "schema": {
+                  "type": "string",
+                  "example": "h3=\":443\"; ma=86400"
+                }
+              },
+              "cf-cache-status": {
+                "schema": {
+                  "type": "string",
+                  "example": "DYNAMIC"
+                }
+              },
+              "server-timing": {
+                "schema": {
+                  "type": "string",
+                  "example": "cfL4;desc=\"?proto=TCP&rtt=978&min_rtt=855&rtt_var=126&sent=19&recv=21&lost=0&retrans=0&sent_bytes=7364&recv_bytes=3480&delivery_rate=5367933&cwnd=4&unsent_bytes=0&cid=f4026edd2752ea34&ts=92855&x=0\""
+                }
+              },
+              "strict-transport-security": {
+                "schema": {
+                  "type": "string",
+                  "example": "max-age=63072000"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "accept-encoding"
+                }
+              },
+              "x-matched-path": {
+                "schema": {
+                  "type": "string",
+                  "example": "/api/external/chatbot/[id]"
+                }
+              },
+              "x-vercel-cache": {
+                "schema": {
+                  "type": "string",
+                  "example": "MISS"
+                }
+              },
+              "x-vercel-id": {
+                "schema": {
+                  "type": "string",
+                  "example": "sin1::bwtxh-1737520303174-1d62c8a41b56"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2025-01-22T04:30:45.790337+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "A helpful support assistant"
+                        },
+                        "docs_metadata": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "enabled_plugins": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "3317853e-0af2-427d-a56f-351a9587f48f"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "managers": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "migrated_data": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "API Docs Demo Chatbot"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Friendly"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Professional"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o-mini"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a highly skilled customer support assistant for [company name]. Your goal is to provide accurate, polite, and concise answers to customer inquiries. If you do not know the answer, recommend the customer to contact human support or check the FAQ section. Ensure a positive tone in all responses"
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "Customer Support"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://example.com/logo.png"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Support Assistant"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#4F46E5"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#10B981"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "How can I help you today?"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "api-docs-demo-chatbot"
+                        },
+                        "suggestions": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2025-01-22T04:30:45.790337+00:00"
+                        },
+                        "v1_chatbot_id": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "version_id": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "voice_widget_config": {
+                          "nullable": true,
+                          "example": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2025-01-22T04:30:45.790337+00:00",
+                        "description": "A helpful support assistant",
+                        "docs_metadata": null,
+                        "enabled_plugins": null,
+                        "id": "3317853e-0af2-427d-a56f-351a9587f48f",
+                        "is_public": true,
+                        "managers": null,
+                        "migrated_data": false,
+                        "name": "API Docs Demo Chatbot",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Friendly",
+                          "tone": "Professional"
+                        },
+                        "settings": {
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o-mini",
+                          "prompt": "You are a highly skilled customer support assistant for [company name]. Your goal is to provide accurate, polite, and concise answers to customer inquiries. If you do not know the answer, recommend the customer to contact human support or check the FAQ section. Ensure a positive tone in all responses",
+                          "snippet": {
+                            "header": "Customer Support",
+                            "logo": "https://example.com/logo.png",
+                            "name": "Support Assistant",
+                            "primaryColor": "#4F46E5",
+                            "secondaryColor": "#10B981",
+                            "slogan": "How can I help you today?"
+                          }
+                        },
+                        "slug": "api-docs-demo-chatbot",
+                        "suggestions": null,
+                        "updated_at": "2025-01-22T04:30:45.790337+00:00",
+                        "v1_chatbot_id": null,
+                        "version_id": null,
+                        "voice_widget_config": null
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -2792,6 +3118,1131 @@
           "schema": {
             "type": "string",
             "example": ""
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/chat": {
+      "post": {
+        "summary": "Chat",
+        "description": "Chat",
+        "operationId": "chat",
+        "parameters": [
+          {
+            "name": "stream",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "true"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "15a23c21867f4f38b0b46f5e4adb1caf87a040b34eb58f68"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "content": {
+                          "type": "string",
+                          "example": "Tell me about the history of the internet."
+                        },
+                        "role": {
+                          "type": "string",
+                          "example": "user"
+                        }
+                      }
+                    },
+                    "example": [
+                      {
+                        "content": "Tell me about the history of the internet.",
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "platform": {
+                    "type": "string",
+                    "example": "web"
+                  },
+                  "sessionToken": {
+                    "type": "string",
+                    "example": "sessionToken789"
+                  }
+                }
+              },
+              "examples": {
+                "Chat": {
+                  "value": {
+                    "messages": [
+                      {
+                        "content": "Tell me about the history of the internet.",
+                        "role": "user"
+                      }
+                    ],
+                    "platform": "web",
+                    "sessionToken": "sessionToken789"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Non stream response / Stream Response",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 22 Jan 2025 10:24:56 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              },
+              "x-vercel-ai-data-stream": {
+                "schema": {
+                  "type": "string",
+                  "example": "v1"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "finish_reason": {
+                      "type": "string",
+                      "example": "stop"
+                    },
+                    "output": {
+                      "type": "string",
+                      "example": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment."
+                    },
+                    "steps": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "experimental_providerMetadata": {
+                            "type": "object",
+                            "properties": {
+                              "openai": {
+                                "type": "object",
+                                "properties": {
+                                  "cachedPromptTokens": {
+                                    "type": "number",
+                                    "example": 0
+                                  },
+                                  "reasoningTokens": {
+                                    "type": "number",
+                                    "example": 0
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "finishReason": {
+                            "type": "string",
+                            "example": "stop"
+                          },
+                          "isContinued": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "request": {
+                            "type": "object",
+                            "properties": {
+                              "body": {
+                                "type": "string",
+                                "example": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"You are an AI assistant that helps users with their questions by providing accurate and concise information. You have access to a knowledge base through the searchKnowledgeBase tool. Use this tool to search for relevant information before responding to user queries. When answering, consider the context of the conversation and provide helpful and informative responses.\\n\\nYou are a technical support bot for okchat.ai. Your responsibility is to troubleshoot issues, provide step-by-step guidance, and escalate complex problems by suggesting users contact a support engineer. Always ensure clarity and patience in your responses.\\n\\n\\n\\nTime awareness:\\nToday is 2025. 1. 22..\\nAdapt to the user's language\"},{\"role\":\"user\",\"content\":\"Tell me about the history of the internet.\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"searchKnowledgeBase\",\"description\":\"Search the knowledge base for relevant documents based on a query\",\"parameters\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\",\"description\":\"The search query to find relevant documents\"}},\"required\":[\"query\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_all_pokemons\",\"description\":\"Get All Pokemons\",\"parameters\":{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"number\",\"default\":\"10\",\"description\":\"Limit Number\"}},\"required\":[\"limit\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_pokemon_details\",\"description\":\"Get Pokemon Details\",\"parameters\":{\"type\":\"object\",\"properties\":{\"pokemon_name\":{\"type\":\"string\",\"description\":\"name of a pokemon\"}},\"required\":[\"pokemon_name\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather_info\",\"description\":\"Get Weather Info\",\"parameters\":{\"type\":\"object\",\"properties\":{\"q\":{\"type\":\"string\",\"description\":\"City Name\"},\"units\":{\"type\":\"string\",\"description\":\"Unit\"}},\"required\":[\"q\",\"units\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the weather of a city\",\"parameters\":{\"type\":\"object\",\"properties\":{\"location\":{\"type\":\"string\",\"description\":\"a city name\"}},\"required\":[\"location\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+                              }
+                            }
+                          },
+                          "response": {
+                            "type": "object",
+                            "properties": {
+                              "headers": {
+                                "type": "object",
+                                "properties": {
+                                  "access-control-expose-headers": {
+                                    "type": "string",
+                                    "example": "X-Request-ID"
+                                  },
+                                  "alt-svc": {
+                                    "type": "string",
+                                    "example": "h3=\":443\"; ma=86400"
+                                  },
+                                  "cf-cache-status": {
+                                    "type": "string",
+                                    "example": "DYNAMIC"
+                                  },
+                                  "cf-ray": {
+                                    "type": "string",
+                                    "example": "905ed550c8b440cc-SIN"
+                                  },
+                                  "connection": {
+                                    "type": "string",
+                                    "example": "keep-alive"
+                                  },
+                                  "content-encoding": {
+                                    "type": "string",
+                                    "example": "br"
+                                  },
+                                  "content-type": {
+                                    "type": "string",
+                                    "example": "application/json"
+                                  },
+                                  "date": {
+                                    "type": "string",
+                                    "example": "Wed, 22 Jan 2025 10:24:23 GMT"
+                                  },
+                                  "openai-organization": {
+                                    "type": "string",
+                                    "example": "dasomx"
+                                  },
+                                  "openai-processing-ms": {
+                                    "type": "string",
+                                    "example": "8111"
+                                  },
+                                  "openai-version": {
+                                    "type": "string",
+                                    "example": "2020-10-01"
+                                  },
+                                  "server": {
+                                    "type": "string",
+                                    "example": "cloudflare"
+                                  },
+                                  "set-cookie": {
+                                    "type": "string",
+                                    "example": "_cfuvid=rlg6jS7Z8p0HC.bVCZiKiHCPyvx74NER.PmtZLrSKUg-1737541463850-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None"
+                                  },
+                                  "strict-transport-security": {
+                                    "type": "string",
+                                    "example": "max-age=31536000; includeSubDomains; preload"
+                                  },
+                                  "transfer-encoding": {
+                                    "type": "string",
+                                    "example": "chunked"
+                                  },
+                                  "x-content-type-options": {
+                                    "type": "string",
+                                    "example": "nosniff"
+                                  },
+                                  "x-ratelimit-limit-requests": {
+                                    "type": "string",
+                                    "example": "10000"
+                                  },
+                                  "x-ratelimit-limit-tokens": {
+                                    "type": "string",
+                                    "example": "10000000"
+                                  },
+                                  "x-ratelimit-remaining-requests": {
+                                    "type": "string",
+                                    "example": "9999"
+                                  },
+                                  "x-ratelimit-remaining-tokens": {
+                                    "type": "string",
+                                    "example": "9999795"
+                                  },
+                                  "x-ratelimit-reset-requests": {
+                                    "type": "string",
+                                    "example": "6ms"
+                                  },
+                                  "x-ratelimit-reset-tokens": {
+                                    "type": "string",
+                                    "example": "1ms"
+                                  },
+                                  "x-request-id": {
+                                    "type": "string",
+                                    "example": "req_0aeec88fc424f34dbda6e9ae6f02415e"
+                                  }
+                                }
+                              },
+                              "id": {
+                                "type": "string",
+                                "example": "chatcmpl-AsSC7lGib6PMX1sue7zKstC6sl0g9"
+                              },
+                              "messages": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "content": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "text": {
+                                            "type": "string",
+                                            "example": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment."
+                                          },
+                                          "type": {
+                                            "type": "string",
+                                            "example": "text"
+                                          }
+                                        }
+                                      },
+                                      "example": [
+                                        {
+                                          "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                                          "type": "text"
+                                        }
+                                      ]
+                                    },
+                                    "role": {
+                                      "type": "string",
+                                      "example": "assistant"
+                                    }
+                                  }
+                                },
+                                "example": [
+                                  {
+                                    "content": [
+                                      {
+                                        "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                                        "type": "text"
+                                      }
+                                    ],
+                                    "role": "assistant"
+                                  }
+                                ]
+                              },
+                              "modelId": {
+                                "type": "string",
+                                "example": "gpt-4o-mini-2024-07-18"
+                              },
+                              "timestamp": {
+                                "type": "string",
+                                "example": "2025-01-22T10:24:15.000Z"
+                              }
+                            }
+                          },
+                          "stepType": {
+                            "type": "string",
+                            "example": "initial"
+                          },
+                          "text": {
+                            "type": "string",
+                            "example": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment."
+                          },
+                          "toolCalls": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "toolResults": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          },
+                          "usage": {
+                            "type": "object",
+                            "properties": {
+                              "completionTokens": {
+                                "type": "number",
+                                "example": 533
+                              },
+                              "promptTokens": {
+                                "type": "number",
+                                "example": 310
+                              },
+                              "totalTokens": {
+                                "type": "number",
+                                "example": 843
+                              }
+                            }
+                          },
+                          "warnings": {
+                            "type": "array",
+                            "items": {},
+                            "example": []
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "experimental_providerMetadata": {
+                            "openai": {
+                              "cachedPromptTokens": 0,
+                              "reasoningTokens": 0
+                            }
+                          },
+                          "finishReason": "stop",
+                          "isContinued": false,
+                          "request": {
+                            "body": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"You are an AI assistant that helps users with their questions by providing accurate and concise information. You have access to a knowledge base through the searchKnowledgeBase tool. Use this tool to search for relevant information before responding to user queries. When answering, consider the context of the conversation and provide helpful and informative responses.\\n\\nYou are a technical support bot for okchat.ai. Your responsibility is to troubleshoot issues, provide step-by-step guidance, and escalate complex problems by suggesting users contact a support engineer. Always ensure clarity and patience in your responses.\\n\\n\\n\\nTime awareness:\\nToday is 2025. 1. 22..\\nAdapt to the user's language\"},{\"role\":\"user\",\"content\":\"Tell me about the history of the internet.\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"searchKnowledgeBase\",\"description\":\"Search the knowledge base for relevant documents based on a query\",\"parameters\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\",\"description\":\"The search query to find relevant documents\"}},\"required\":[\"query\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_all_pokemons\",\"description\":\"Get All Pokemons\",\"parameters\":{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"number\",\"default\":\"10\",\"description\":\"Limit Number\"}},\"required\":[\"limit\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_pokemon_details\",\"description\":\"Get Pokemon Details\",\"parameters\":{\"type\":\"object\",\"properties\":{\"pokemon_name\":{\"type\":\"string\",\"description\":\"name of a pokemon\"}},\"required\":[\"pokemon_name\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather_info\",\"description\":\"Get Weather Info\",\"parameters\":{\"type\":\"object\",\"properties\":{\"q\":{\"type\":\"string\",\"description\":\"City Name\"},\"units\":{\"type\":\"string\",\"description\":\"Unit\"}},\"required\":[\"q\",\"units\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the weather of a city\",\"parameters\":{\"type\":\"object\",\"properties\":{\"location\":{\"type\":\"string\",\"description\":\"a city name\"}},\"required\":[\"location\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+                          },
+                          "response": {
+                            "headers": {
+                              "access-control-expose-headers": "X-Request-ID",
+                              "alt-svc": "h3=\":443\"; ma=86400",
+                              "cf-cache-status": "DYNAMIC",
+                              "cf-ray": "905ed550c8b440cc-SIN",
+                              "connection": "keep-alive",
+                              "content-encoding": "br",
+                              "content-type": "application/json",
+                              "date": "Wed, 22 Jan 2025 10:24:23 GMT",
+                              "openai-organization": "dasomx",
+                              "openai-processing-ms": "8111",
+                              "openai-version": "2020-10-01",
+                              "server": "cloudflare",
+                              "set-cookie": "_cfuvid=rlg6jS7Z8p0HC.bVCZiKiHCPyvx74NER.PmtZLrSKUg-1737541463850-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                              "transfer-encoding": "chunked",
+                              "x-content-type-options": "nosniff",
+                              "x-ratelimit-limit-requests": "10000",
+                              "x-ratelimit-limit-tokens": "10000000",
+                              "x-ratelimit-remaining-requests": "9999",
+                              "x-ratelimit-remaining-tokens": "9999795",
+                              "x-ratelimit-reset-requests": "6ms",
+                              "x-ratelimit-reset-tokens": "1ms",
+                              "x-request-id": "req_0aeec88fc424f34dbda6e9ae6f02415e"
+                            },
+                            "id": "chatcmpl-AsSC7lGib6PMX1sue7zKstC6sl0g9",
+                            "messages": [
+                              {
+                                "content": [
+                                  {
+                                    "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                                    "type": "text"
+                                  }
+                                ],
+                                "role": "assistant"
+                              }
+                            ],
+                            "modelId": "gpt-4o-mini-2024-07-18",
+                            "timestamp": "2025-01-22T10:24:15.000Z"
+                          },
+                          "stepType": "initial",
+                          "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                          "toolCalls": [],
+                          "toolResults": [],
+                          "usage": {
+                            "completionTokens": 533,
+                            "promptTokens": 310,
+                            "totalTokens": 843
+                          },
+                          "warnings": []
+                        }
+                      ]
+                    },
+                    "tool_calls": {
+                      "type": "array",
+                      "items": {},
+                      "example": []
+                    },
+                    "tool_results": {
+                      "type": "array",
+                      "items": {},
+                      "example": []
+                    }
+                  }
+                },
+                "examples": {
+                  "Non stream response": {
+                    "value": {
+                      "finish_reason": "stop",
+                      "output": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                      "steps": [
+                        {
+                          "experimental_providerMetadata": {
+                            "openai": {
+                              "cachedPromptTokens": 0,
+                              "reasoningTokens": 0
+                            }
+                          },
+                          "finishReason": "stop",
+                          "isContinued": false,
+                          "request": {
+                            "body": "{\"model\":\"gpt-4o-mini\",\"temperature\":0,\"messages\":[{\"role\":\"system\",\"content\":\"You are an AI assistant that helps users with their questions by providing accurate and concise information. You have access to a knowledge base through the searchKnowledgeBase tool. Use this tool to search for relevant information before responding to user queries. When answering, consider the context of the conversation and provide helpful and informative responses.\\n\\nYou are a technical support bot for okchat.ai. Your responsibility is to troubleshoot issues, provide step-by-step guidance, and escalate complex problems by suggesting users contact a support engineer. Always ensure clarity and patience in your responses.\\n\\n\\n\\nTime awareness:\\nToday is 2025. 1. 22..\\nAdapt to the user's language\"},{\"role\":\"user\",\"content\":\"Tell me about the history of the internet.\"}],\"tools\":[{\"type\":\"function\",\"function\":{\"name\":\"searchKnowledgeBase\",\"description\":\"Search the knowledge base for relevant documents based on a query\",\"parameters\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\",\"description\":\"The search query to find relevant documents\"}},\"required\":[\"query\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_all_pokemons\",\"description\":\"Get All Pokemons\",\"parameters\":{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"number\",\"default\":\"10\",\"description\":\"Limit Number\"}},\"required\":[\"limit\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_pokemon_details\",\"description\":\"Get Pokemon Details\",\"parameters\":{\"type\":\"object\",\"properties\":{\"pokemon_name\":{\"type\":\"string\",\"description\":\"name of a pokemon\"}},\"required\":[\"pokemon_name\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather_info\",\"description\":\"Get Weather Info\",\"parameters\":{\"type\":\"object\",\"properties\":{\"q\":{\"type\":\"string\",\"description\":\"City Name\"},\"units\":{\"type\":\"string\",\"description\":\"Unit\"}},\"required\":[\"q\",\"units\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}},{\"type\":\"function\",\"function\":{\"name\":\"get_weather\",\"description\":\"Get the weather of a city\",\"parameters\":{\"type\":\"object\",\"properties\":{\"location\":{\"type\":\"string\",\"description\":\"a city name\"}},\"required\":[\"location\"],\"additionalProperties\":false,\"$schema\":\"http://json-schema.org/draft-07/schema#\"}}}],\"tool_choice\":\"auto\"}"
+                          },
+                          "response": {
+                            "headers": {
+                              "access-control-expose-headers": "X-Request-ID",
+                              "alt-svc": "h3=\":443\"; ma=86400",
+                              "cf-cache-status": "DYNAMIC",
+                              "cf-ray": "905ed550c8b440cc-SIN",
+                              "connection": "keep-alive",
+                              "content-encoding": "br",
+                              "content-type": "application/json",
+                              "date": "Wed, 22 Jan 2025 10:24:23 GMT",
+                              "openai-organization": "dasomx",
+                              "openai-processing-ms": "8111",
+                              "openai-version": "2020-10-01",
+                              "server": "cloudflare",
+                              "set-cookie": "_cfuvid=rlg6jS7Z8p0HC.bVCZiKiHCPyvx74NER.PmtZLrSKUg-1737541463850-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None",
+                              "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+                              "transfer-encoding": "chunked",
+                              "x-content-type-options": "nosniff",
+                              "x-ratelimit-limit-requests": "10000",
+                              "x-ratelimit-limit-tokens": "10000000",
+                              "x-ratelimit-remaining-requests": "9999",
+                              "x-ratelimit-remaining-tokens": "9999795",
+                              "x-ratelimit-reset-requests": "6ms",
+                              "x-ratelimit-reset-tokens": "1ms",
+                              "x-request-id": "req_0aeec88fc424f34dbda6e9ae6f02415e"
+                            },
+                            "id": "chatcmpl-AsSC7lGib6PMX1sue7zKstC6sl0g9",
+                            "messages": [
+                              {
+                                "content": [
+                                  {
+                                    "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                                    "type": "text"
+                                  }
+                                ],
+                                "role": "assistant"
+                              }
+                            ],
+                            "modelId": "gpt-4o-mini-2024-07-18",
+                            "timestamp": "2025-01-22T10:24:15.000Z"
+                          },
+                          "stepType": "initial",
+                          "text": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                          "toolCalls": [],
+                          "toolResults": [],
+                          "usage": {
+                            "completionTokens": 533,
+                            "promptTokens": 310,
+                            "totalTokens": 843
+                          },
+                          "warnings": []
+                        }
+                      ],
+                      "tool_calls": [],
+                      "tool_results": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/conversations/{sessionId}": {
+      "get": {
+        "summary": "Get Conversations",
+        "description": "Get Conversations",
+        "operationId": "getConversations",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "15a23c21867f4f38b0b46f5e4adb1caf87a040b34eb58f68"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get Conversations": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 22 Jan 2025 10:40:36 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "session": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "chatbot_id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2025-01-22T10:21:17.313285+00:00"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+                        },
+                        "is_human_mode": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "last_message": {
+                          "type": "string",
+                          "example": "Tell me about the history of the internet."
+                        },
+                        "metadata": {
+                          "type": "object",
+                          "properties": {
+                            "anonymous": {
+                              "type": "boolean",
+                              "example": true
+                            }
+                          }
+                        },
+                        "migrated_data": {
+                          "type": "boolean",
+                          "example": false
+                        },
+                        "platform": {
+                          "type": "string",
+                          "example": "web"
+                        },
+                        "session_token": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "sns_user_id": {
+                          "type": "string",
+                          "example": "sessionToken789"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2025-01-22T10:24:54.750912+00:00"
+                        },
+                        "user_id": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "voice_path": {
+                          "nullable": true,
+                          "example": null
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "session": {
+                        "active": true,
+                        "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "created_at": "2025-01-22T10:21:17.313285+00:00",
+                        "id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                        "is_human_mode": false,
+                        "last_message": "Tell me about the history of the internet.",
+                        "metadata": {
+                          "anonymous": true
+                        },
+                        "migrated_data": false,
+                        "platform": "web",
+                        "session_token": null,
+                        "sns_user_id": "sessionToken789",
+                        "updated_at": "2025-01-22T10:24:54.750912+00:00",
+                        "user_id": null,
+                        "voice_path": null
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+          }
+        },
+        {
+          "name": "sessionId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/conversations/{sessionId}/messages": {
+      "get": {
+        "summary": "Get Messages",
+        "description": "Get Messages",
+        "operationId": "getMessages",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "15a23c21867f4f38b0b46f5e4adb1caf87a040b34eb58f68"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get Messages": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 22 Jan 2025 10:41:54 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "string",
+                            "example": "Tell me about the history of the internet."
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2025-01-22T10:21:17.514555+00:00"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b"
+                          },
+                          "metadata": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "migrated_data": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "sender_type": {
+                            "type": "string",
+                            "example": "user"
+                          },
+                          "session_id": {
+                            "type": "string",
+                            "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+                          },
+                          "session_token": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "tokens_used": {
+                            "type": "number",
+                            "example": 0
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:21:17.514555+00:00",
+                          "id": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other, leading to the concept of an \"inter-network\" or internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: In 1991, Tim Berners-Lee introduced the World Wide Web, a system that allowed users to access and share information through hypertext links. This led to the development of web browsers, such as Mosaic in 1993, which made the web more accessible to the general public. The commercialization of the internet began in the mid-1990s, leading to a rapid increase in users and websites.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster and more reliable connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people communicate and share information online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, with more people accessing the web on the go. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of the Internet of Things (IoT), where everyday devices are connected to the internet, enabling data exchange and automation. Discussions around internet privacy, security, and regulation continue to evolve as the internet becomes increasingly integral to daily life.\n\nThe internet has transformed communication, commerce, education, and entertainment, shaping modern society in profound ways.",
+                          "created_at": "2025-01-22T10:21:29.088338+00:00",
+                          "id": "c97a62fb-d57b-43c0-b735-456787edc4f6",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:22:20.710219+00:00",
+                          "id": "9e95ba52-4898-4b2c-a3be-3dc13362a52d",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research to develop a robust, fault-tolerant communication system, leading to the creation of ARPANET (Advanced Research Projects Agency Network) in 1969. ARPANET was the first network to implement the packet-switching concept, which breaks data into packets for transmission.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for data transmission over networks. This led to the establishment of the term \"internet\" as a shorthand for interconnected networks.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the growth of the internet beyond ARPANET, with the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the network. The National Science Foundation (NSF) created NSFNET, a more extensive network that connected various regional networks, further expanding access.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public, leading to a rapid increase in users and websites.\n\n5. **2000s - Commercialization and Social Media**: The internet became commercialized in the late 1990s, leading to the dot-com boom. The 2000s saw the rise of social media platforms, search engines, and e-commerce, fundamentally changing how people interacted online.\n\n6. **2010s - Mobile and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the internet. Cloud computing emerged, allowing for data storage and services over the internet, further enhancing connectivity and accessibility.\n\n7. **2020s - The Future**: As of 2025, the internet continues to evolve with advancements in artificial intelligence, the Internet of Things (IoT), and 5G technology, promising even greater connectivity and new applications.\n\nThe internet has become an integral part of modern life, influencing communication, commerce, education, and entertainment globally.",
+                          "created_at": "2025-01-22T10:22:31.080874+00:00",
+                          "id": "dcc9d601-f8d8-4302-be47-92919ad8e2d3",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:24:13.710599+00:00",
+                          "id": "15931e1a-688b-446c-ab08-057ee0e36691",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                          "created_at": "2025-01-22T10:24:24.417612+00:00",
+                          "id": "6389ee09-1aac-4a7b-92d9-a0528ce38241",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:24:54.307765+00:00",
+                          "id": "28892e53-f6a6-4591-85ad-f5fb34c6a2f4",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other.\n\n3. **1980s - Expansion and Standardization**: The National Science Foundation (NSF) created NSFNET in 1985, which connected various regional networks and expanded access to academic and research institutions. The Domain Name System (DNS) was introduced in 1984, making it easier to navigate the growing network.\n\n4. **1990s - The World Wide Web**: Tim Berners-Lee invented the World Wide Web in 1989, introducing the first web browser and web server. The web quickly gained popularity, leading to the first website going live in 1991. The commercialization of the internet began in the mid-1990s, with the emergence of web hosting services and e-commerce.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, leading to the rise of mobile applications and services. Cloud computing became mainstream, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is witnessing the growth of IoT, where everyday devices are connected to the internet, enhancing automation and data collection. Discussions around internet privacy, security, and regulation are also prominent as the internet continues to evolve.\n\nThe internet has transformed how we communicate, work, and access information, becoming an integral part of modern life.",
+                          "created_at": "2025-01-22T10:25:03.696816+00:00",
+                          "id": "533e7e6a-eb1b-49fd-9b76-ae35aeadc097",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        }
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "messages": [
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:21:17.514555+00:00",
+                          "id": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other, leading to the concept of an \"inter-network\" or internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: In 1991, Tim Berners-Lee introduced the World Wide Web, a system that allowed users to access and share information through hypertext links. This led to the development of web browsers, such as Mosaic in 1993, which made the web more accessible to the general public. The commercialization of the internet began in the mid-1990s, leading to a rapid increase in users and websites.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster and more reliable connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people communicate and share information online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, with more people accessing the web on the go. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of the Internet of Things (IoT), where everyday devices are connected to the internet, enabling data exchange and automation. Discussions around internet privacy, security, and regulation continue to evolve as the internet becomes increasingly integral to daily life.\n\nThe internet has transformed communication, commerce, education, and entertainment, shaping modern society in profound ways.",
+                          "created_at": "2025-01-22T10:21:29.088338+00:00",
+                          "id": "c97a62fb-d57b-43c0-b735-456787edc4f6",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:22:20.710219+00:00",
+                          "id": "9e95ba52-4898-4b2c-a3be-3dc13362a52d",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research to develop a robust, fault-tolerant communication system, leading to the creation of ARPANET (Advanced Research Projects Agency Network) in 1969. ARPANET was the first network to implement the packet-switching concept, which breaks data into packets for transmission.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for data transmission over networks. This led to the establishment of the term \"internet\" as a shorthand for interconnected networks.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the growth of the internet beyond ARPANET, with the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the network. The National Science Foundation (NSF) created NSFNET, a more extensive network that connected various regional networks, further expanding access.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public, leading to a rapid increase in users and websites.\n\n5. **2000s - Commercialization and Social Media**: The internet became commercialized in the late 1990s, leading to the dot-com boom. The 2000s saw the rise of social media platforms, search engines, and e-commerce, fundamentally changing how people interacted online.\n\n6. **2010s - Mobile and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the internet. Cloud computing emerged, allowing for data storage and services over the internet, further enhancing connectivity and accessibility.\n\n7. **2020s - The Future**: As of 2025, the internet continues to evolve with advancements in artificial intelligence, the Internet of Things (IoT), and 5G technology, promising even greater connectivity and new applications.\n\nThe internet has become an integral part of modern life, influencing communication, commerce, education, and entertainment globally.",
+                          "created_at": "2025-01-22T10:22:31.080874+00:00",
+                          "id": "dcc9d601-f8d8-4302-be47-92919ad8e2d3",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:24:13.710599+00:00",
+                          "id": "15931e1a-688b-446c-ab08-057ee0e36691",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
+                          "created_at": "2025-01-22T10:24:24.417612+00:00",
+                          "id": "6389ee09-1aac-4a7b-92d9-a0528ce38241",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "Tell me about the history of the internet.",
+                          "created_at": "2025-01-22T10:24:54.307765+00:00",
+                          "id": "28892e53-f6a6-4591-85ad-f5fb34c6a2f4",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "user",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        },
+                        {
+                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other.\n\n3. **1980s - Expansion and Standardization**: The National Science Foundation (NSF) created NSFNET in 1985, which connected various regional networks and expanded access to academic and research institutions. The Domain Name System (DNS) was introduced in 1984, making it easier to navigate the growing network.\n\n4. **1990s - The World Wide Web**: Tim Berners-Lee invented the World Wide Web in 1989, introducing the first web browser and web server. The web quickly gained popularity, leading to the first website going live in 1991. The commercialization of the internet began in the mid-1990s, with the emergence of web hosting services and e-commerce.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, leading to the rise of mobile applications and services. Cloud computing became mainstream, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is witnessing the growth of IoT, where everyday devices are connected to the internet, enhancing automation and data collection. Discussions around internet privacy, security, and regulation are also prominent as the internet continues to evolve.\n\nThe internet has transformed how we communicate, work, and access information, becoming an integral part of modern life.",
+                          "created_at": "2025-01-22T10:25:03.696816+00:00",
+                          "id": "533e7e6a-eb1b-49fd-9b76-ae35aeadc097",
+                          "metadata": {},
+                          "migrated_data": false,
+                          "sender_type": "bot",
+                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_token": null,
+                          "tokens_used": 0
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+          }
+        },
+        {
+          "name": "sessionId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
           }
         }
       ]
