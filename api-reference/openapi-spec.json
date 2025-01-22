@@ -3132,7 +3132,7 @@
             "name": "stream",
             "in": "query",
             "schema": {
-              "type": "string",
+              "type": "boolean",
               "example": "true"
             }
           },
