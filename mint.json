@@ -25,7 +25,13 @@
     "name": "App",
     "url": "https://v2.okchat.ai"
   },
-  "tabs": [],
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference",
+      "openapi": "/api-reference/openapi-spec.json"
+    }
+  ],
   "anchors": [
     {
       "name": "Community",
@@ -66,6 +72,10 @@
     {
       "group": "Plugins",
       "pages": ["plugins/discord", "plugins/slack", "plugins/cal"]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
     }
   ],
   "footerSocials": {

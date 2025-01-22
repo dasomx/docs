@@ -1,0 +1,1970 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "OKCHAT2.0",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://v2.okchat.ai"
+    },
+    {
+      "url": "http://localhost"
+    }
+  ],
+  "paths": {
+    "/api/embedfiles": {
+      "post": {
+        "summary": "Knowledge Base Files",
+        "description": "Knowledge Base Files",
+        "operationId": "knowledgeBaseFiles",
+        "parameters": [
+          {
+            "name": "chatbotId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "chatbotId": {
+                    "type": "string",
+                    "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                  },
+                  "files": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/external/chatbots": {
+      "get": {
+        "summary": "Get Chatbots",
+        "description": "Get Chatbots",
+        "operationId": "getChatbots",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:35:59 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbots": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "active": {
+                            "type": "boolean",
+                            "example": true
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2024-11-08T09:25:54.141252+00:00"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Demo AI Chatbot"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                          },
+                          "is_public": {
+                            "type": "boolean",
+                            "example": true
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Test"
+                          },
+                          "openai_api_key": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "organization_id": {
+                            "type": "string",
+                            "example": "123042b2-86e2-4184-a86e-95423d728815"
+                          },
+                          "personality_config": {
+                            "type": "object",
+                            "properties": {
+                              "style": {
+                                "type": "string",
+                                "example": "Test"
+                              },
+                              "tone": {
+                                "type": "string",
+                                "example": "Test"
+                              }
+                            }
+                          },
+                          "settings": {
+                            "type": "object",
+                            "properties": {
+                              "avatar": {
+                                "type": "string",
+                                "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                              },
+                              "greeting": {
+                                "type": "string",
+                                "example": "Hello! How can I assist you today?"
+                              },
+                              "isRequestUserInfoEnabled": {
+                                "type": "boolean",
+                                "example": false
+                              },
+                              "isToolEnabled": {
+                                "type": "boolean",
+                                "example": true
+                              },
+                              "model": {
+                                "type": "string",
+                                "example": "gpt-4o"
+                              },
+                              "prompt": {
+                                "type": "string",
+                                "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                              },
+                              "snippet": {
+                                "type": "object",
+                                "properties": {
+                                  "header": {
+                                    "type": "string",
+                                    "example": "오케이챗 고객응대 챗봇"
+                                  },
+                                  "logo": {
+                                    "type": "string",
+                                    "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                  },
+                                  "name": {
+                                    "type": "string",
+                                    "example": "Test"
+                                  },
+                                  "primaryColor": {
+                                    "type": "string",
+                                    "example": "#9c2caa"
+                                  },
+                                  "secondaryColor": {
+                                    "type": "string",
+                                    "example": "#60d7a9"
+                                  },
+                                  "slogan": {
+                                    "type": "string",
+                                    "example": "Chat with us"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "slug": {
+                            "type": "string",
+                            "example": "test-1"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2024-12-01T14:38:45.709025+00:00"
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "active": true,
+                          "created_at": "2024-11-08T09:25:54.141252+00:00",
+                          "description": "Demo AI Chatbot",
+                          "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "is_public": true,
+                          "name": "Test",
+                          "openai_api_key": null,
+                          "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                          "personality_config": {
+                            "style": "Test",
+                            "tone": "Test"
+                          },
+                          "settings": {
+                            "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                            "greeting": "Hello! How can I assist you today?",
+                            "isRequestUserInfoEnabled": false,
+                            "isToolEnabled": true,
+                            "model": "gpt-4o",
+                            "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                            "snippet": {
+                              "header": "오케이챗 고객응대 챗봇",
+                              "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                              "name": "Test",
+                              "primaryColor": "#9c2caa",
+                              "secondaryColor": "#60d7a9",
+                              "slogan": "Chat with us"
+                            }
+                          },
+                          "slug": "test-1",
+                          "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                        },
+                        {
+                          "active": true,
+                          "created_at": "2024-12-02T03:07:46.421566+00:00",
+                          "description": "A helpful support assistant",
+                          "id": "7f6783a6-5a6a-4279-b9a0-0ff11318e07f",
+                          "is_public": true,
+                          "name": "Customer Support External Bot",
+                          "openai_api_key": null,
+                          "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                          "personality_config": {
+                            "style": "Friendly",
+                            "tone": "Professional"
+                          },
+                          "settings": {
+                            "avatar": "https://example.com/avatar.png",
+                            "greeting": "Hello! How can I assist you today?",
+                            "isRequestUserInfoEnabled": false,
+                            "isToolEnabled": true,
+                            "model": "gpt-4o-mini",
+                            "prompt": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information.",
+                            "snippet": {
+                              "header": "Customer Support",
+                              "logo": "https://example.com/logo.png",
+                              "name": "Support Assistant",
+                              "primaryColor": "#4F46E5",
+                              "secondaryColor": "#10B981",
+                              "slogan": "How can I help you today?"
+                            }
+                          },
+                          "slug": "customer-support-bot-98",
+                          "updated_at": "2024-12-02T03:07:46.421566+00:00"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbots": [
+                        {
+                          "active": true,
+                          "created_at": "2024-11-08T09:25:54.141252+00:00",
+                          "description": "Demo AI Chatbot",
+                          "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "is_public": true,
+                          "name": "Test",
+                          "openai_api_key": null,
+                          "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                          "personality_config": {
+                            "style": "Test",
+                            "tone": "Test"
+                          },
+                          "settings": {
+                            "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                            "greeting": "Hello! How can I assist you today?",
+                            "isRequestUserInfoEnabled": false,
+                            "isToolEnabled": true,
+                            "model": "gpt-4o",
+                            "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                            "snippet": {
+                              "header": "오케이챗 고객응대 챗봇",
+                              "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                              "name": "Test",
+                              "primaryColor": "#9c2caa",
+                              "secondaryColor": "#60d7a9",
+                              "slogan": "Chat with us"
+                            }
+                          },
+                          "slug": "test-1",
+                          "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                        },
+                        {
+                          "active": true,
+                          "created_at": "2024-12-02T03:07:46.421566+00:00",
+                          "description": "A helpful support assistant",
+                          "id": "7f6783a6-5a6a-4279-b9a0-0ff11318e07f",
+                          "is_public": true,
+                          "name": "Customer Support External Bot",
+                          "openai_api_key": null,
+                          "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                          "personality_config": {
+                            "style": "Friendly",
+                            "tone": "Professional"
+                          },
+                          "settings": {
+                            "avatar": "https://example.com/avatar.png",
+                            "greeting": "Hello! How can I assist you today?",
+                            "isRequestUserInfoEnabled": false,
+                            "isToolEnabled": true,
+                            "model": "gpt-4o-mini",
+                            "prompt": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information.",
+                            "snippet": {
+                              "header": "Customer Support",
+                              "logo": "https://example.com/logo.png",
+                              "name": "Support Assistant",
+                              "primaryColor": "#4F46E5",
+                              "secondaryColor": "#10B981",
+                              "slogan": "How can I help you today?"
+                            }
+                          },
+                          "slug": "customer-support-bot-98",
+                          "updated_at": "2024-12-02T03:07:46.421566+00:00"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Chatbot",
+        "description": "Create Chatbot",
+        "operationId": "createChatbot",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "A helpful support assistant"
+                  },
+                  "is_public": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Customer Support External Bot"
+                  },
+                  "personality_config": {
+                    "type": "object",
+                    "properties": {
+                      "style": {
+                        "type": "string",
+                        "example": "Friendly"
+                      },
+                      "tone": {
+                        "type": "string",
+                        "example": "Professional"
+                      }
+                    }
+                  },
+                  "settings": {
+                    "type": "object",
+                    "properties": {
+                      "greeting": {
+                        "type": "string",
+                        "example": "Hello! How can I assist you today?"
+                      },
+                      "isRequestUserInfoEnabled": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "isToolEnabled": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "model": {
+                        "type": "string",
+                        "example": "gpt-4o-mini"
+                      },
+                      "prompt": {
+                        "type": "string",
+                        "example": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information."
+                      },
+                      "snippet": {
+                        "type": "object",
+                        "properties": {
+                          "header": {
+                            "type": "string",
+                            "example": "Customer Support"
+                          },
+                          "logo": {
+                            "type": "string",
+                            "example": "https://example.com/logo.png"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Support Assistant"
+                          },
+                          "primaryColor": {
+                            "type": "string",
+                            "example": "#4F46E5"
+                          },
+                          "secondaryColor": {
+                            "type": "string",
+                            "example": "#10B981"
+                          },
+                          "slogan": {
+                            "type": "string",
+                            "example": "How can I help you today?"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "slug": {
+                    "type": "string",
+                    "example": "customer-support-bot-97"
+                  }
+                }
+              },
+              "examples": {
+                "Create Chatbot": {
+                  "value": {
+                    "description": "A helpful support assistant",
+                    "is_public": true,
+                    "name": "Customer Support External Bot",
+                    "personality_config": {
+                      "style": "Friendly",
+                      "tone": "Professional"
+                    },
+                    "settings": {
+                      "greeting": "Hello! How can I assist you today?",
+                      "isRequestUserInfoEnabled": false,
+                      "isToolEnabled": true,
+                      "model": "gpt-4o-mini",
+                      "prompt": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information.",
+                      "snippet": {
+                        "header": "Customer Support",
+                        "logo": "https://example.com/logo.png",
+                        "name": "Support Assistant",
+                        "primaryColor": "#4F46E5",
+                        "secondaryColor": "#10B981",
+                        "slogan": "How can I help you today?"
+                      }
+                    },
+                    "slug": "customer-support-bot-97"
+                  }
+                },
+                "Store Conversation": {
+                  "value": {
+                    "description": "A helpful support assistant",
+                    "is_public": true,
+                    "name": "Customer Support External Bot",
+                    "personality_config": {
+                      "style": "Friendly",
+                      "tone": "Professional"
+                    },
+                    "settings": {
+                      "greeting": "Hello! How can I assist you today?",
+                      "isRequestUserInfoEnabled": false,
+                      "isToolEnabled": true,
+                      "model": "gpt-4o-mini",
+                      "prompt": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information.",
+                      "snippet": {
+                        "header": "Customer Support",
+                        "logo": "https://example.com/logo.png",
+                        "name": "Support Assistant",
+                        "primaryColor": "#4F46E5",
+                        "secondaryColor": "#10B981",
+                        "slogan": "How can I help you today?"
+                      }
+                    },
+                    "slug": "customer-support-bot-97"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Chatbot",
+        "description": "Update Chatbot",
+        "operationId": "updateChatbot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "a9158955-2f82-4ec1-8d3e-0b24d79f53e4"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "A helpful support assistant"
+                  },
+                  "is_public": {
+                    "type": "boolean",
+                    "example": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Customer Support External Bot!"
+                  },
+                  "settings": {
+                    "type": "object",
+                    "properties": {
+                      "avatar": {
+                        "type": "string",
+                        "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/a9158955-2f82-4ec1-8d3e-0b24d79f53e4/0.9680291497355293.jpg"
+                      },
+                      "greeting": {
+                        "type": "string",
+                        "example": "Hello! How can I assist you today?"
+                      },
+                      "isRequestUserInfoEnabled": {
+                        "type": "boolean",
+                        "example": false
+                      },
+                      "isToolEnabled": {
+                        "type": "boolean",
+                        "example": true
+                      },
+                      "model": {
+                        "type": "string",
+                        "example": "gpt-4o"
+                      },
+                      "prompt": {
+                        "type": "string",
+                        "example": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information."
+                      },
+                      "snippet": {
+                        "type": "object",
+                        "properties": {
+                          "header": {
+                            "type": "string",
+                            "example": "Customer Support"
+                          },
+                          "logo": {
+                            "type": "string",
+                            "example": "https://example.com/logo.png"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "Support Assistant"
+                          },
+                          "primaryColor": {
+                            "type": "string",
+                            "example": "#4F46E5"
+                          },
+                          "secondaryColor": {
+                            "type": "string",
+                            "example": "#10B981"
+                          },
+                          "slogan": {
+                            "type": "string",
+                            "example": "How can I help you today?"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "slug": {
+                    "type": "string",
+                    "example": "customer-support-bot-98"
+                  }
+                }
+              },
+              "examples": {
+                "Update Chatbot": {
+                  "value": {
+                    "description": "A helpful support assistant",
+                    "is_public": true,
+                    "name": "Customer Support External Bot!",
+                    "settings": {
+                      "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/a9158955-2f82-4ec1-8d3e-0b24d79f53e4/0.9680291497355293.jpg",
+                      "greeting": "Hello! How can I assist you today?",
+                      "isRequestUserInfoEnabled": false,
+                      "isToolEnabled": true,
+                      "model": "gpt-4o",
+                      "prompt": "You are a helpful and friendly customer support agent. Respond to user inquiries in a clear and concise manner. Always strive to provide accurate and helpful information.",
+                      "snippet": {
+                        "header": "Customer Support",
+                        "logo": "https://example.com/logo.png",
+                        "name": "Support Assistant",
+                        "primaryColor": "#4F46E5",
+                        "secondaryColor": "#10B981",
+                        "slogan": "How can I help you today?"
+                      }
+                    },
+                    "slug": "customer-support-bot-98"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/external/chatbot/{chatbotId}": {
+      "get": {
+        "summary": "Get Chatbot Details",
+        "description": "Get Chatbot Details",
+        "operationId": "getChatbotDetails",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2024-11-08T09:25:54.141252+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Demo AI Chatbot"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Test"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Test"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Test"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "avatar": {
+                              "type": "string",
+                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                            },
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "오케이챗 고객응대 챗봇"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Test"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#9c2caa"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#60d7a9"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "Chat with us"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "test-1"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2024-12-01T14:38:45.709025+00:00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2024-11-08T09:25:54.141252+00:00",
+                        "description": "Demo AI Chatbot",
+                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "is_public": true,
+                        "name": "Test",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Test",
+                          "tone": "Test"
+                        },
+                        "settings": {
+                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o",
+                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                          "snippet": {
+                            "header": "오케이챗 고객응대 챗봇",
+                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                            "name": "Test",
+                            "primaryColor": "#9c2caa",
+                            "secondaryColor": "#60d7a9",
+                            "slogan": "Chat with us"
+                          }
+                        },
+                        "slug": "test-1",
+                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Chatbot",
+        "description": "Delete Chatbot",
+        "operationId": "deleteChatbot",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "E.G",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Tue, 10 Dec 2024 04:43:11 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Chatbot deleted successfully"
+                    }
+                  }
+                },
+                "examples": {
+                  "E.G": {
+                    "value": {
+                      "message": "Chatbot deleted successfully"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/knowledge-base": {
+      "get": {
+        "summary": "Get Knowledge Base List Of Chatbot",
+        "description": "Get Knowledge Base List Of Chatbot",
+        "operationId": "getKnowledgeBaseListOfChatbot",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "파일"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "bd51aac6-7bd2-46c3-acb5-e1e855bb1ef4"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2024-11-08T09:25:54.141252+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Demo AI Chatbot"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Test"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Test"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Test"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "avatar": {
+                              "type": "string",
+                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                            },
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "오케이챗 고객응대 챗봇"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Test"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#9c2caa"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#60d7a9"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "Chat with us"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "test-1"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2024-12-01T14:38:45.709025+00:00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2024-11-08T09:25:54.141252+00:00",
+                        "description": "Demo AI Chatbot",
+                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "is_public": true,
+                        "name": "Test",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Test",
+                          "tone": "Test"
+                        },
+                        "settings": {
+                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o",
+                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                          "snippet": {
+                            "header": "오케이챗 고객응대 챗봇",
+                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                            "name": "Test",
+                            "primaryColor": "#9c2caa",
+                            "secondaryColor": "#60d7a9",
+                            "slogan": "Chat with us"
+                          }
+                        },
+                        "slug": "test-1",
+                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Knowledge Base Data",
+        "description": "Delete Knowledge Base Data",
+        "operationId": "deleteKnowledgeBaseData",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "2043a479-0cca-4495-97cc-c4b490138f3d"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2024-11-08T09:25:54.141252+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Demo AI Chatbot"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Test"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Test"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Test"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "avatar": {
+                              "type": "string",
+                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                            },
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "오케이챗 고객응대 챗봇"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Test"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#9c2caa"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#60d7a9"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "Chat with us"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "test-1"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2024-12-01T14:38:45.709025+00:00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2024-11-08T09:25:54.141252+00:00",
+                        "description": "Demo AI Chatbot",
+                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "is_public": true,
+                        "name": "Test",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Test",
+                          "tone": "Test"
+                        },
+                        "settings": {
+                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o",
+                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                          "snippet": {
+                            "header": "오케이챗 고객응대 챗봇",
+                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                            "name": "Test",
+                            "primaryColor": "#9c2caa",
+                            "secondaryColor": "#60d7a9",
+                            "slogan": "Chat with us"
+                          }
+                        },
+                        "slug": "test-1",
+                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update Knowledge Base",
+        "description": "Update Knowledge Base",
+        "operationId": "updateKnowledgeBase",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "파일"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "documentId": {
+                    "type": "string",
+                    "example": "2043a479-0cca-4495-97cc-c4b490138f3d"
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2024-11-08T09:25:54.141252+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Demo AI Chatbot"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Test"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Test"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Test"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "avatar": {
+                              "type": "string",
+                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                            },
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "오케이챗 고객응대 챗봇"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Test"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#9c2caa"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#60d7a9"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "Chat with us"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "test-1"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2024-12-01T14:38:45.709025+00:00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2024-11-08T09:25:54.141252+00:00",
+                        "description": "Demo AI Chatbot",
+                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "is_public": true,
+                        "name": "Test",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Test",
+                          "tone": "Test"
+                        },
+                        "settings": {
+                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o",
+                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                          "snippet": {
+                            "header": "오케이챗 고객응대 챗봇",
+                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                            "name": "Test",
+                            "primaryColor": "#9c2caa",
+                            "secondaryColor": "#60d7a9",
+                            "slogan": "Chat with us"
+                          }
+                        },
+                        "slug": "test-1",
+                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/query-knowledge": {
+      "post": {
+        "summary": "Query Knowledge",
+        "description": "Query Knowledge",
+        "operationId": "queryKnowledge",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "bd51aac6-7bd2-46c3-acb5-e1e855bb1ef4"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "example": "What's OKCHAT AI?"
+                  }
+                }
+              },
+              "examples": {
+                "Query Knowledge": {
+                  "value": {
+                    "query": "What's OKCHAT AI?"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chatbot": {
+                      "type": "object",
+                      "properties": {
+                        "active": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "created_at": {
+                          "type": "string",
+                          "example": "2024-11-08T09:25:54.141252+00:00"
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Demo AI Chatbot"
+                        },
+                        "id": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "is_public": {
+                          "type": "boolean",
+                          "example": true
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Test"
+                        },
+                        "openai_api_key": {
+                          "nullable": true,
+                          "example": null
+                        },
+                        "organization_id": {
+                          "type": "string",
+                          "example": "123042b2-86e2-4184-a86e-95423d728815"
+                        },
+                        "personality_config": {
+                          "type": "object",
+                          "properties": {
+                            "style": {
+                              "type": "string",
+                              "example": "Test"
+                            },
+                            "tone": {
+                              "type": "string",
+                              "example": "Test"
+                            }
+                          }
+                        },
+                        "settings": {
+                          "type": "object",
+                          "properties": {
+                            "avatar": {
+                              "type": "string",
+                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
+                            },
+                            "greeting": {
+                              "type": "string",
+                              "example": "Hello! How can I assist you today?"
+                            },
+                            "isRequestUserInfoEnabled": {
+                              "type": "boolean",
+                              "example": false
+                            },
+                            "isToolEnabled": {
+                              "type": "boolean",
+                              "example": true
+                            },
+                            "model": {
+                              "type": "string",
+                              "example": "gpt-4o"
+                            },
+                            "prompt": {
+                              "type": "string",
+                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
+                            },
+                            "snippet": {
+                              "type": "object",
+                              "properties": {
+                                "header": {
+                                  "type": "string",
+                                  "example": "오케이챗 고객응대 챗봇"
+                                },
+                                "logo": {
+                                  "type": "string",
+                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "Test"
+                                },
+                                "primaryColor": {
+                                  "type": "string",
+                                  "example": "#9c2caa"
+                                },
+                                "secondaryColor": {
+                                  "type": "string",
+                                  "example": "#60d7a9"
+                                },
+                                "slogan": {
+                                  "type": "string",
+                                  "example": "Chat with us"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "slug": {
+                          "type": "string",
+                          "example": "test-1"
+                        },
+                        "updated_at": {
+                          "type": "string",
+                          "example": "2024-12-01T14:38:45.709025+00:00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chatbot": {
+                        "active": true,
+                        "created_at": "2024-11-08T09:25:54.141252+00:00",
+                        "description": "Demo AI Chatbot",
+                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "is_public": true,
+                        "name": "Test",
+                        "openai_api_key": null,
+                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
+                        "personality_config": {
+                          "style": "Test",
+                          "tone": "Test"
+                        },
+                        "settings": {
+                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
+                          "greeting": "Hello! How can I assist you today?",
+                          "isRequestUserInfoEnabled": false,
+                          "isToolEnabled": true,
+                          "model": "gpt-4o",
+                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
+                          "snippet": {
+                            "header": "오케이챗 고객응대 챗봇",
+                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
+                            "name": "Test",
+                            "primaryColor": "#9c2caa",
+                            "secondaryColor": "#60d7a9",
+                            "slogan": "Chat with us"
+                          }
+                        },
+                        "slug": "test-1",
+                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/update-avatar": {
+      "patch": {
+        "summary": "Chatbot Avatar",
+        "description": "Chatbot Avatar",
+        "operationId": "chatbotAvatar",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "avatar": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      ]
+    }
+  },
+  "tags": []
+}

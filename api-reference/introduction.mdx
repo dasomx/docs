@@ -1,33 +1,35 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Introduction"
+description: "Example section for showcasing API endpoints"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+Welcome to the OKChat AI API Reference! This documentation provides detailed information about the APIs available for integrating and extending the functionality of the OKChat AI platform. Whether you're looking to embed knowledge base files, manage chatbot configurations, or interact with external tools, this guide will help you get started.
 
-## Welcome
+## Overview
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+The OKChat AI API allows developers to programmatically interact with the platform, enabling seamless integration with other systems and services. The API is designed to be RESTful, making it easy to use with standard HTTP methods and JSON data formats.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Key Features
 
-## Authentication
+- **Knowledge Base Management**: Upload and manage knowledge base files to enhance your chatbot's responses.
+- **Chatbot Configuration**: Programmatically configure and manage chatbot settings.
+- **Integration with External Tools**: Connect your chatbot with external APIs and services.
+- **Real-Time Data Access**: Fetch real-time data and provide dynamic responses to users.
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Getting Started
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+### Authentication
+
+To use the OKChat AI API, you need to authenticate your requests using an API key. Include the API key in the `x-api-key` header of your requests.
+
+Example:
+
+```http
+GET /api/endpoint HTTP/1.1
+Host: api.okchat.ai
+x-api-key: your-api-key
 ```
+
+The OKCHAT.AI API provides powerful capabilities to extend and customize your chatbot's functionality. By following this documentation, you can integrate the API into your applications and services, enabling a seamless and enhanced user experience.
+
+For further assistance, refer to the detailed endpoint documentation or contact our support team. Happy coding!
