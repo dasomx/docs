@@ -2353,7 +2353,230 @@
         },
         "responses": {
           "200": {
-            "description": ""
+            "description": "Example",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 24 Jan 2025 10:05:28 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Voice widget config updated successfully"
+                    },
+                    "voice_widget_config": {
+                      "type": "object",
+                      "properties": {
+                        "agentId": {
+                          "type": "string",
+                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                        },
+                        "appearance": {
+                          "type": "object",
+                          "properties": {
+                            "backgroundColor": {
+                              "type": "string",
+                              "example": "#ffffff"
+                            },
+                            "borderColor": {
+                              "type": "string",
+                              "example": "#e1e1e1"
+                            },
+                            "buttonColor": {
+                              "type": "string",
+                              "example": "#000000"
+                            },
+                            "buttonRadius": {
+                              "type": "number",
+                              "example": 32
+                            },
+                            "buttonTextColor": {
+                              "type": "string",
+                              "example": "#ffffff"
+                            },
+                            "cardRadius": {
+                              "type": "number",
+                              "example": 20
+                            },
+                            "focusOutlineColor": {
+                              "type": "string",
+                              "example": "#000000"
+                            },
+                            "textColor": {
+                              "type": "string",
+                              "example": "#000000"
+                            }
+                          }
+                        },
+                        "avatar": {
+                          "type": "object",
+                          "properties": {
+                            "imageUrl": {
+                              "type": "string",
+                              "example": "https://assets.grok.com/users/e473c4f6-e103-4d71-8194-03a7ecc74370/0R8nPXaAvhBinoUh-generated_image.jpg"
+                            }
+                          }
+                        },
+                        "model": {
+                          "type": "object",
+                          "properties": {
+                            "max_output_tokens": {
+                              "type": "number",
+                              "example": 2048
+                            },
+                            "temperature": {
+                              "type": "number",
+                              "example": 0.7
+                            }
+                          }
+                        },
+                        "text": {
+                          "type": "object",
+                          "properties": {
+                            "callToAction": {
+                              "type": "string",
+                              "example": "Appointment?"
+                            },
+                            "endCall": {
+                              "type": "string",
+                              "example": "End"
+                            },
+                            "listeningStatus": {
+                              "type": "string",
+                              "example": "Listening"
+                            },
+                            "speakingStatus": {
+                              "type": "string",
+                              "example": "Talk to interrupt"
+                            },
+                            "startCall": {
+                              "type": "string",
+                              "example": "Start a call"
+                            }
+                          }
+                        },
+                        "vad": {
+                          "type": "object",
+                          "properties": {
+                            "prefix_padding_ms": {
+                              "type": "number",
+                              "example": 500
+                            },
+                            "silence_duration_ms": {
+                              "type": "number",
+                              "example": 1000
+                            },
+                            "threshold": {
+                              "type": "number",
+                              "example": 0.8
+                            }
+                          }
+                        },
+                        "voice": {
+                          "type": "string",
+                          "example": "shimmer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "message": "Voice widget config updated successfully",
+                      "voice_widget_config": {
+                        "agentId": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                        "appearance": {
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#e1e1e1",
+                          "buttonColor": "#000000",
+                          "buttonRadius": 32,
+                          "buttonTextColor": "#ffffff",
+                          "cardRadius": 20,
+                          "focusOutlineColor": "#000000",
+                          "textColor": "#000000"
+                        },
+                        "avatar": {
+                          "imageUrl": "https://assets.grok.com/users/e473c4f6-e103-4d71-8194-03a7ecc74370/0R8nPXaAvhBinoUh-generated_image.jpg"
+                        },
+                        "model": {
+                          "max_output_tokens": 2048,
+                          "temperature": 0.7
+                        },
+                        "text": {
+                          "callToAction": "Appointment?",
+                          "endCall": "End",
+                          "listeningStatus": "Listening",
+                          "speakingStatus": "Talk to interrupt",
+                          "startCall": "Start a call"
+                        },
+                        "vad": {
+                          "prefix_padding_ms": 500,
+                          "silence_duration_ms": 1000,
+                          "threshold": 0.8
+                        },
+                        "voice": "shimmer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       },
