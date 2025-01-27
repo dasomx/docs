@@ -2592,6 +2592,209 @@
         }
       ]
     },
+    "/api/external/chatbot/{chatbotId}/chat-widget": {
+      "patch": {
+        "summary": "Chat Widget",
+        "description": "Chat Widget",
+        "operationId": "chatWidget",
+        "parameters": [
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "15a23c21867f4f38b0b46f5e4adb1caf87a040b34eb58f68"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "type": "string",
+                    "example": "Customer Support"
+                  },
+                  "language": {
+                    "type": "string",
+                    "example": "auto"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "example": "https://example.com/logo.png"
+                  },
+                  "name": {
+                    "type": "string",
+                    "example": "Support Assistant"
+                  },
+                  "primaryColor": {
+                    "type": "string",
+                    "example": "#4F46E5"
+                  },
+                  "secondaryColor": {
+                    "type": "string",
+                    "example": "#10B981"
+                  },
+                  "slogan": {
+                    "type": "string",
+                    "example": "How can I help you today?"
+                  }
+                }
+              },
+              "examples": {
+                "Chat Widget": {
+                  "value": {
+                    "header": "Customer Support",
+                    "language": "auto",
+                    "logo": "https://example.com/logo.png",
+                    "name": "Support Assistant",
+                    "primaryColor": "#4F46E5",
+                    "secondaryColor": "#10B981",
+                    "slogan": "How can I help you today?"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Sat, 25 Jan 2025 08:54:13 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chat_widget_config": {
+                      "type": "object",
+                      "properties": {
+                        "header": {
+                          "type": "string",
+                          "example": "Customer Support"
+                        },
+                        "language": {
+                          "type": "string",
+                          "example": "auto"
+                        },
+                        "logo": {
+                          "type": "string",
+                          "example": "https://example.com/logo.png"
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "Support Assistant"
+                        },
+                        "primaryColor": {
+                          "type": "string",
+                          "example": "#4F46E5"
+                        },
+                        "secondaryColor": {
+                          "type": "string",
+                          "example": "#10B981"
+                        },
+                        "slogan": {
+                          "type": "string",
+                          "example": "How can I help you today?"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Chat widget config updated successfully"
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "chat_widget_config": {
+                        "header": "Customer Support",
+                        "language": "auto",
+                        "logo": "https://example.com/logo.png",
+                        "name": "Support Assistant",
+                        "primaryColor": "#4F46E5",
+                        "secondaryColor": "#10B981",
+                        "slogan": "How can I help you today?"
+                      },
+                      "message": "Chat widget config updated successfully"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "3317853e-0af2-427d-a56f-351a9587f48f"
+          }
+        }
+      ]
+    },
     "/api/external/chatbot/{chatbotId}/knowledge-base": {
       "get": {
         "summary": "Get Knowledge Base List Of Chatbot",
