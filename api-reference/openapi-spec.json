@@ -3749,7 +3749,7 @@
             "in": "query",
             "schema": {
               "type": "string",
-              "example": "true"
+              "example": "false"
             }
           },
           {
@@ -4302,16 +4302,16 @@
           "required": true,
           "schema": {
             "type": "string",
-            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+            "example": "c631086b-0147-4749-9034-940647620f0c"
           }
         }
       ]
     },
     "/api/external/chatbot/{chatbotId}/conversations/{sessionId}": {
       "get": {
-        "summary": "Get Conversations",
-        "description": "Get Conversations",
-        "operationId": "getConversations",
+        "summary": "Get A Conversation",
+        "description": "Get A Conversation",
+        "operationId": "getAConversation",
         "parameters": [
           {
             "name": "x-api-key",
@@ -4326,7 +4326,7 @@
           "content": {
             "application/json": {
               "examples": {
-                "Get Conversations": {
+                "Get A Conversation": {
                   "value": ""
                 }
               }
@@ -4511,6 +4511,730 @@
           "schema": {
             "type": "string",
             "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+          }
+        }
+      ]
+    },
+    "/api/external/chatbot/{chatbotId}/conversations": {
+      "get": {
+        "summary": "Get Conversations",
+        "description": "Get Conversations",
+        "operationId": "getConversations",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "10"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "in_progress"
+            }
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "example": "15a23c21867f4f38b0b46f5e4adb1caf87a040b34eb58f68"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "examples": {
+                "Get Conversations": {
+                  "value": ""
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Example",
+            "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Fri, 07 Mar 2025 05:42:06 GMT"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              },
+              "Transfer-Encoding": {
+                "schema": {
+                  "type": "string",
+                  "example": "chunked"
+                }
+              },
+              "access-control-allow-headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "Content-Type, x-api-key"
+                }
+              },
+              "vary": {
+                "schema": {
+                  "type": "string",
+                  "example": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "active": {
+                            "type": "boolean",
+                            "example": true
+                          },
+                          "chatbot_id": {
+                            "type": "string",
+                            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2025-03-07T04:56:09.200005+00:00"
+                          },
+                          "id": {
+                            "type": "string",
+                            "example": "dcda7e8a-e344-41a2-8a7e-b7400add6971"
+                          },
+                          "is_human_mode": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "last_message": {
+                            "nullable": true,
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "content": {
+                                    "type": "string",
+                                    "example": "That image shows someone meditating in a tranquil, forested setting with sunlight filtering through the trees. If you're interested in meditation tips, here are a few:\n\n1. **Find a Quiet Spot**: Choose a peaceful location where you won't be disturbed.\n\n2. **Comfortable Position**: Sit in a comfortable position with your back straight.\n\n3. **Focus on Breathing**: Pay attention to your breath, inhaling and exhaling slowly.\n\n4. **Stay Present**: Try to keep your mind focused on the present moment.\n\n5. **Start Small**: Begin with short sessions and gradually increase the time as you become more comfortable.\n\nLet me know if you want more information!"
+                                  },
+                                  "id": {
+                                    "type": "string",
+                                    "example": "4004e76a-4f6f-4d25-94bc-e0a8aca8a091"
+                                  },
+                                  "sender_type": {
+                                    "type": "string",
+                                    "example": "bot"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "string",
+                                "example": "Best places to visit in Bangkok"
+                              },
+                              {
+                                "nullable": true,
+                                "example": null
+                              },
+                              {
+                                "type": "string",
+                                "example": "hello describe these images"
+                              },
+                              {
+                                "type": "string",
+                                "example": "describe this image pls"
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "content": {
+                                    "type": "string",
+                                    "example": "This image depicts a city skyline at sunrise or sunset, with the sun positioned low on the horizon between tall buildings. The scene is beautifully lit, casting warm, golden hues and long shadows across the buildings. The overall atmosphere is serene and urban, capturing the essence of a bustling city transitioning between day and night."
+                                  },
+                                  "id": {
+                                    "type": "string",
+                                    "example": "6d9c2f04-55aa-4f99-9406-079b9b535a72"
+                                  },
+                                  "sender_type": {
+                                    "type": "string",
+                                    "example": "bot"
+                                  }
+                                }
+                              },
+                              {
+                                "nullable": true,
+                                "example": null
+                              }
+                            ]
+                          },
+                          "metadata": {
+                            "type": "object",
+                            "properties": {
+                              "anonymous": {
+                                "type": "boolean",
+                                "example": true
+                              },
+                              "type": {
+                                "type": "string",
+                                "example": "voice_chat"
+                              }
+                            }
+                          },
+                          "migrated_data": {
+                            "type": "boolean",
+                            "example": false
+                          },
+                          "platform": {
+                            "type": "string",
+                            "example": "navertalktalk"
+                          },
+                          "session_token": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "sns_user_id": {
+                            "type": "string",
+                            "nullable": true,
+                            "example": "icdghyH6SYeJw3ROn9mBnQ"
+                          },
+                          "state": {
+                            "type": "string",
+                            "example": "in_progress"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2025-03-07T05:22:28.209148+00:00"
+                          },
+                          "user_id": {
+                            "nullable": true,
+                            "example": null
+                          },
+                          "voice_path": {
+                            "type": "string",
+                            "nullable": true,
+                            "example": null
+                          }
+                        }
+                      },
+                      "example": [
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T04:56:09.200005+00:00",
+                          "id": "dcda7e8a-e344-41a2-8a7e-b7400add6971",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "That image shows someone meditating in a tranquil, forested setting with sunlight filtering through the trees. If you're interested in meditation tips, here are a few:\n\n1. **Find a Quiet Spot**: Choose a peaceful location where you won't be disturbed.\n\n2. **Comfortable Position**: Sit in a comfortable position with your back straight.\n\n3. **Focus on Breathing**: Pay attention to your breath, inhaling and exhaling slowly.\n\n4. **Stay Present**: Try to keep your mind focused on the present moment.\n\n5. **Start Small**: Begin with short sessions and gradually increase the time as you become more comfortable.\n\nLet me know if you want more information!",
+                            "id": "4004e76a-4f6f-4d25-94bc-e0a8aca8a091",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "navertalktalk",
+                          "session_token": null,
+                          "sns_user_id": "icdghyH6SYeJw3ROn9mBnQ",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T05:22:28.209148+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T04:07:44.813178+00:00",
+                          "id": "ed712d96-b83f-49d2-8b68-faa3a9820bb3",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "I can't identify the building, but it looks like it has unique architectural features. If you can provide more context or details, I might be able to help further!",
+                            "id": "c8956c02-b6a1-4b5f-ab2f-04256bfbec49",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "whatsapp",
+                          "session_token": null,
+                          "sns_user_id": "489235447595858",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T04:53:03.972374+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T03:49:53.756919+00:00",
+                          "id": "eb7a6c37-b47c-407d-9725-cf34471ba78d",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "What a serene sunset over the landscape! If you have any questions or need more information, feel free to ask.",
+                            "id": "f13d3681-7f6e-40ba-b9ec-da28bb6eb342",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "instagram",
+                          "session_token": null,
+                          "sns_user_id": "1459433351416106",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T03:59:23.465365+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-06T10:46:18.360536+00:00",
+                          "id": "0c1a8eca-9404-48d8-94d4-175426beb9f1",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "This image shows a city skyline at dusk or dawn, with tall buildings silhouetted against a colorful sky. The sky is a mix of blues, purples, and oranges, and the buildings are reflected in the body of water in the foreground. The city lights are starting to illuminate, adding a vibrant touch to the scene.",
+                            "id": "ebf041c9-aae7-44a4-9fd6-c6e8dc4f9124",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "facebook-messenger",
+                          "session_token": null,
+                          "sns_user_id": "8418351301605909",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T10:46:42.182706+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-06T02:30:18.377841+00:00",
+                          "id": "a037c34d-cc5a-45e1-866e-39d2da4a066e",
+                          "is_human_mode": false,
+                          "last_message": "Best places to visit in Bangkok",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "cec8d472-bdaf-4407-af7c-a62ec0c9ee06",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T02:30:18.45229+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T11:12:17.101138+00:00",
+                          "id": "e59e2971-5296-4cc6-bcf2-6a0635a9d0d8",
+                          "is_human_mode": false,
+                          "last_message": null,
+                          "metadata": {
+                            "type": "voice_chat"
+                          },
+                          "migrated_data": false,
+                          "platform": "voice",
+                          "session_token": null,
+                          "sns_user_id": null,
+                          "state": "in_progress",
+                          "updated_at": "2025-03-05T11:12:18.961956+00:00",
+                          "user_id": null,
+                          "voice_path": "conversation-voice_assistant_room_9570.ogg"
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T07:24:46.364129+00:00",
+                          "id": "d7d055ba-1083-4bef-b040-df2b16bcb00f",
+                          "is_human_mode": false,
+                          "last_message": "hello describe these images",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "7741e133-905d-4df6-84ce-d993d474b803",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T03:22:59.522124+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T04:25:58.001608+00:00",
+                          "id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "is_human_mode": false,
+                          "last_message": "describe this image pls",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "3079d695-9d0d-48a1-85e7-d4b58fcaf7d2",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T07:11:47.450727+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-04T09:17:00.022677+00:00",
+                          "id": "f894a0d1-1945-44c4-ad39-b0b956b93509",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "This image depicts a city skyline at sunrise or sunset, with the sun positioned low on the horizon between tall buildings. The scene is beautifully lit, casting warm, golden hues and long shadows across the buildings. The overall atmosphere is serene and urban, capturing the essence of a bustling city transitioning between day and night.",
+                            "id": "6d9c2f04-55aa-4f99-9406-079b9b535a72",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "line",
+                          "session_token": null,
+                          "sns_user_id": "U373c7c38f171b392ca2076e9b48fc43d",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T08:25:43.101814+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-04T02:30:36.098658+00:00",
+                          "id": "347485ad-93a5-4451-9f4f-7a63315f5abc",
+                          "is_human_mode": false,
+                          "last_message": null,
+                          "metadata": {
+                            "type": "voice_chat"
+                          },
+                          "migrated_data": false,
+                          "platform": "voice",
+                          "session_token": null,
+                          "sns_user_id": null,
+                          "state": "in_progress",
+                          "updated_at": "2025-03-04T02:30:37.581999+00:00",
+                          "user_id": null,
+                          "voice_path": "conversation-voice_assistant_room_3745.ogg"
+                        }
+                      ]
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "currentPage": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "pageSize": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "totalCount": {
+                          "type": "number",
+                          "example": 20
+                        },
+                        "totalPages": {
+                          "type": "number",
+                          "example": 2
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example": {
+                    "value": {
+                      "data": [
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T04:56:09.200005+00:00",
+                          "id": "dcda7e8a-e344-41a2-8a7e-b7400add6971",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "That image shows someone meditating in a tranquil, forested setting with sunlight filtering through the trees. If you're interested in meditation tips, here are a few:\n\n1. **Find a Quiet Spot**: Choose a peaceful location where you won't be disturbed.\n\n2. **Comfortable Position**: Sit in a comfortable position with your back straight.\n\n3. **Focus on Breathing**: Pay attention to your breath, inhaling and exhaling slowly.\n\n4. **Stay Present**: Try to keep your mind focused on the present moment.\n\n5. **Start Small**: Begin with short sessions and gradually increase the time as you become more comfortable.\n\nLet me know if you want more information!",
+                            "id": "4004e76a-4f6f-4d25-94bc-e0a8aca8a091",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "navertalktalk",
+                          "session_token": null,
+                          "sns_user_id": "icdghyH6SYeJw3ROn9mBnQ",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T05:22:28.209148+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T04:07:44.813178+00:00",
+                          "id": "ed712d96-b83f-49d2-8b68-faa3a9820bb3",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "I can't identify the building, but it looks like it has unique architectural features. If you can provide more context or details, I might be able to help further!",
+                            "id": "c8956c02-b6a1-4b5f-ab2f-04256bfbec49",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "whatsapp",
+                          "session_token": null,
+                          "sns_user_id": "489235447595858",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T04:53:03.972374+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-07T03:49:53.756919+00:00",
+                          "id": "eb7a6c37-b47c-407d-9725-cf34471ba78d",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "What a serene sunset over the landscape! If you have any questions or need more information, feel free to ask.",
+                            "id": "f13d3681-7f6e-40ba-b9ec-da28bb6eb342",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "instagram",
+                          "session_token": null,
+                          "sns_user_id": "1459433351416106",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T03:59:23.465365+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-06T10:46:18.360536+00:00",
+                          "id": "0c1a8eca-9404-48d8-94d4-175426beb9f1",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "This image shows a city skyline at dusk or dawn, with tall buildings silhouetted against a colorful sky. The sky is a mix of blues, purples, and oranges, and the buildings are reflected in the body of water in the foreground. The city lights are starting to illuminate, adding a vibrant touch to the scene.",
+                            "id": "ebf041c9-aae7-44a4-9fd6-c6e8dc4f9124",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "facebook-messenger",
+                          "session_token": null,
+                          "sns_user_id": "8418351301605909",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T10:46:42.182706+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-06T02:30:18.377841+00:00",
+                          "id": "a037c34d-cc5a-45e1-866e-39d2da4a066e",
+                          "is_human_mode": false,
+                          "last_message": "Best places to visit in Bangkok",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "cec8d472-bdaf-4407-af7c-a62ec0c9ee06",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T02:30:18.45229+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T11:12:17.101138+00:00",
+                          "id": "e59e2971-5296-4cc6-bcf2-6a0635a9d0d8",
+                          "is_human_mode": false,
+                          "last_message": null,
+                          "metadata": {
+                            "type": "voice_chat"
+                          },
+                          "migrated_data": false,
+                          "platform": "voice",
+                          "session_token": null,
+                          "sns_user_id": null,
+                          "state": "in_progress",
+                          "updated_at": "2025-03-05T11:12:18.961956+00:00",
+                          "user_id": null,
+                          "voice_path": "conversation-voice_assistant_room_9570.ogg"
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T07:24:46.364129+00:00",
+                          "id": "d7d055ba-1083-4bef-b040-df2b16bcb00f",
+                          "is_human_mode": false,
+                          "last_message": "hello describe these images",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "7741e133-905d-4df6-84ce-d993d474b803",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-07T03:22:59.522124+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-05T04:25:58.001608+00:00",
+                          "id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "is_human_mode": false,
+                          "last_message": "describe this image pls",
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "web",
+                          "session_token": null,
+                          "sns_user_id": "3079d695-9d0d-48a1-85e7-d4b58fcaf7d2",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T07:11:47.450727+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-04T09:17:00.022677+00:00",
+                          "id": "f894a0d1-1945-44c4-ad39-b0b956b93509",
+                          "is_human_mode": false,
+                          "last_message": {
+                            "content": "This image depicts a city skyline at sunrise or sunset, with the sun positioned low on the horizon between tall buildings. The scene is beautifully lit, casting warm, golden hues and long shadows across the buildings. The overall atmosphere is serene and urban, capturing the essence of a bustling city transitioning between day and night.",
+                            "id": "6d9c2f04-55aa-4f99-9406-079b9b535a72",
+                            "sender_type": "bot"
+                          },
+                          "metadata": {
+                            "anonymous": true
+                          },
+                          "migrated_data": false,
+                          "platform": "line",
+                          "session_token": null,
+                          "sns_user_id": "U373c7c38f171b392ca2076e9b48fc43d",
+                          "state": "in_progress",
+                          "updated_at": "2025-03-06T08:25:43.101814+00:00",
+                          "user_id": null,
+                          "voice_path": null
+                        },
+                        {
+                          "active": true,
+                          "chatbot_id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
+                          "created_at": "2025-03-04T02:30:36.098658+00:00",
+                          "id": "347485ad-93a5-4451-9f4f-7a63315f5abc",
+                          "is_human_mode": false,
+                          "last_message": null,
+                          "metadata": {
+                            "type": "voice_chat"
+                          },
+                          "migrated_data": false,
+                          "platform": "voice",
+                          "session_token": null,
+                          "sns_user_id": null,
+                          "state": "in_progress",
+                          "updated_at": "2025-03-04T02:30:37.581999+00:00",
+                          "user_id": null,
+                          "voice_path": "conversation-voice_assistant_room_3745.ogg"
+                        }
+                      ],
+                      "metadata": {
+                        "currentPage": 1,
+                        "pageSize": 10,
+                        "totalCount": 20,
+                        "totalPages": 2
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "chatbotId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
           }
         }
       ]
