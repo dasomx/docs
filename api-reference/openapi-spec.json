@@ -5246,6 +5246,22 @@
         "operationId": "getMessages",
         "parameters": [
           {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "1"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "10"
+            }
+          },
+          {
             "name": "x-api-key",
             "in": "header",
             "schema": {
@@ -5329,30 +5345,76 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "messages": {
+                    "data": {
                       "type": "array",
                       "items": {
                         "type": "object",
                         "properties": {
+                          "attachments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "example": "0.806494468977148.png"
+                                },
+                                "url": {
+                                  "type": "string",
+                                  "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.806494468977148.png"
+                                }
+                              }
+                            },
+                            "nullable": true,
+                            "example": [
+                              {
+                                "name": "0.806494468977148.png",
+                                "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.806494468977148.png"
+                              },
+                              {
+                                "name": "0.47461492756254064.png",
+                                "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.47461492756254064.png"
+                              },
+                              {
+                                "name": "0.34089790317279434.png",
+                                "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.34089790317279434.png"
+                              }
+                            ]
+                          },
                           "content": {
                             "type": "string",
-                            "example": "Tell me about the history of the internet."
+                            "example": "Describe this image"
                           },
                           "created_at": {
                             "type": "string",
-                            "example": "2025-01-22T10:21:17.514555+00:00"
+                            "example": "2025-03-05T04:25:58.059835+00:00"
                           },
                           "id": {
                             "type": "string",
-                            "example": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b"
+                            "example": "b10506a1-1ca7-4336-a72b-f37782c6a054"
                           },
                           "metadata": {
                             "type": "object",
-                            "properties": {}
+                            "properties": {
+                              "mid": {
+                                "type": "string",
+                                "example": "msg-Mzs8wSy4weVyiALOzzZRDles"
+                              }
+                            }
                           },
                           "migrated_data": {
                             "type": "boolean",
                             "example": false
+                          },
+                          "model": {
+                            "type": "string",
+                            "nullable": true,
+                            "example": null
+                          },
+                          "provider": {
+                            "type": "string",
+                            "nullable": true,
+                            "example": null
                           },
                           "sender_type": {
                             "type": "string",
@@ -5360,7 +5422,7 @@
                           },
                           "session_id": {
                             "type": "string",
-                            "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+                            "example": "f081d259-6c72-4eca-8687-1b6ed716257e"
                           },
                           "session_token": {
                             "nullable": true,
@@ -5369,195 +5431,470 @@
                           "tokens_used": {
                             "type": "number",
                             "example": 0
+                          },
+                          "tool_calls": {
+                            "type": "array",
+                            "nullable": true,
+                            "example": null
+                          },
+                          "tool_results": {
+                            "type": "array",
+                            "nullable": true,
+                            "example": null
                           }
                         }
                       },
                       "example": [
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:21:17.514555+00:00",
-                          "id": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b",
+                          "attachments": [
+                            {
+                              "name": "0.806494468977148.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.806494468977148.png"
+                            },
+                            {
+                              "name": "0.47461492756254064.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.47461492756254064.png"
+                            },
+                            {
+                              "name": "0.34089790317279434.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.34089790317279434.png"
+                            }
+                          ],
+                          "content": "Describe this image",
+                          "created_at": "2025-03-05T04:25:58.059835+00:00",
+                          "id": "b10506a1-1ca7-4336-a72b-f37782c6a054",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other, leading to the concept of an \"inter-network\" or internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: In 1991, Tim Berners-Lee introduced the World Wide Web, a system that allowed users to access and share information through hypertext links. This led to the development of web browsers, such as Mosaic in 1993, which made the web more accessible to the general public. The commercialization of the internet began in the mid-1990s, leading to a rapid increase in users and websites.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster and more reliable connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people communicate and share information online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, with more people accessing the web on the go. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of the Internet of Things (IoT), where everyday devices are connected to the internet, enabling data exchange and automation. Discussions around internet privacy, security, and regulation continue to evolve as the internet becomes increasingly integral to daily life.\n\nThe internet has transformed communication, commerce, education, and entertainment, shaping modern society in profound ways.",
-                          "created_at": "2025-01-22T10:21:29.088338+00:00",
-                          "id": "c97a62fb-d57b-43c0-b735-456787edc4f6",
+                          "attachments": null,
+                          "content": "The images depict a serene camping scene set in a mountainous landscape. \n\n1. **First Image**: A tent is pitched on a grassy area surrounded by tall trees and boulders, with majestic snow-capped mountains in the background. A campfire is burning nearby, creating a cozy atmosphere.\n\n2. **Second Image**: A robot stands in the same picturesque setting, next to the tent. The robot has a vintage design, featuring metallic elements and a friendly appearance, suggesting it might be a companion for outdoor adventures.\n\n3. **Third Image**: Another robot, similar in style to the second, is present in a slightly different area of the campsite. This robot also has a vintage look, wearing a cap and equipped with various tools, indicating it might assist with camping tasks.\n\nOverall, the images blend elements of nature with whimsical robotic characters, creating a unique and imaginative camping scenario.",
+                          "created_at": "2025-03-05T04:26:10.241508+00:00",
+                          "id": "85706af7-c3f1-413a-b4fb-43eda8d258d7",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": "gpt-4o-mini",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:22:20.710219+00:00",
-                          "id": "9e95ba52-4898-4b2c-a3be-3dc13362a52d",
+                          "attachments": [
+                            {
+                              "name": "0.031071150695289873.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.031071150695289873.png"
+                            },
+                            {
+                              "name": "0.5423937996768102.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.5423937996768102.png"
+                            },
+                            {
+                              "name": "0.7798706640238224.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.7798706640238224.png"
+                            }
+                          ],
+                          "content": "Describe these images",
+                          "created_at": "2025-03-05T07:08:50.863723+00:00",
+                          "id": "e69359c7-caf7-419b-906e-0f478a94ccde",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research to develop a robust, fault-tolerant communication system, leading to the creation of ARPANET (Advanced Research Projects Agency Network) in 1969. ARPANET was the first network to implement the packet-switching concept, which breaks data into packets for transmission.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for data transmission over networks. This led to the establishment of the term \"internet\" as a shorthand for interconnected networks.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the growth of the internet beyond ARPANET, with the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the network. The National Science Foundation (NSF) created NSFNET, a more extensive network that connected various regional networks, further expanding access.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public, leading to a rapid increase in users and websites.\n\n5. **2000s - Commercialization and Social Media**: The internet became commercialized in the late 1990s, leading to the dot-com boom. The 2000s saw the rise of social media platforms, search engines, and e-commerce, fundamentally changing how people interacted online.\n\n6. **2010s - Mobile and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the internet. Cloud computing emerged, allowing for data storage and services over the internet, further enhancing connectivity and accessibility.\n\n7. **2020s - The Future**: As of 2025, the internet continues to evolve with advancements in artificial intelligence, the Internet of Things (IoT), and 5G technology, promising even greater connectivity and new applications.\n\nThe internet has become an integral part of modern life, influencing communication, commerce, education, and entertainment globally.",
-                          "created_at": "2025-01-22T10:22:31.080874+00:00",
-                          "id": "dcc9d601-f8d8-4302-be47-92919ad8e2d3",
+                          "attachments": null,
+                          "content": "Here are descriptions of the images:\n\n1. **First Image**: A serene camping scene featuring a large tent set in a lush green meadow. The background showcases majestic mountains with snow-capped peaks under a clear blue sky. A small campfire is burning nearby, surrounded by rocks, adding to the tranquil outdoor atmosphere.\n\n2. **Second Image**: A whimsical robot stands in the same picturesque camping setting. The robot has a vintage design with metallic features and large, expressive eyes. It appears to be exploring the area, with the tent and mountains in the background, creating a blend of nature and technology.\n\n3. **Third Image**: Another robot, similar in style to the second, is depicted in the same outdoor environment. This robot has a different design, featuring a cap and a utility belt, suggesting it might be equipped for camping or exploration. The background includes a cabin and additional tents, enhancing the camping theme.",
+                          "created_at": "2025-03-05T07:09:05.423355+00:00",
+                          "id": "9a0e408d-1588-4d64-9e33-814a56b0543b",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": "gpt-4o-mini",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:24:13.710599+00:00",
-                          "id": "15931e1a-688b-446c-ab08-057ee0e36691",
+                          "attachments": [
+                            {
+                              "name": "0.3554636060885503.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.3554636060885503.png"
+                            }
+                          ],
+                          "content": "describe this image",
+                          "created_at": "2025-03-06T06:54:57.123427+00:00",
+                          "id": "5a5e3b4d-9894-4e78-be11-fbd637034c27",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
-                          "created_at": "2025-01-22T10:24:24.417612+00:00",
-                          "id": "6389ee09-1aac-4a7b-92d9-a0528ce38241",
-                          "metadata": {},
+                          "attachments": null,
+                          "content": "The image depicts a serene camping scene. In the foreground, there is a pitched tent on a grassy area surrounded by rocks. Next to the tent, a campfire is burning, adding warmth and ambiance to the setting. In the background, a range of majestic, snow-capped mountains rises beneath a clear blue sky with a bright sun. Tall evergreen trees frame the scene, contributing to the tranquil and natural atmosphere.",
+                          "created_at": "2025-03-06T06:55:07.999262+00:00",
+                          "id": "4492f637-8a3a-4bfa-abc6-8dd1a561926b",
+                          "metadata": {
+                            "mid": "msg-Mzs8wSy4weVyiALOzzZRDles"
+                          },
                           "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:24:54.307765+00:00",
-                          "id": "28892e53-f6a6-4591-85ad-f5fb34c6a2f4",
+                          "attachments": [
+                            {
+                              "name": "0.4848606669311497.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.4848606669311497.png"
+                            }
+                          ],
+                          "content": "describe this image pls",
+                          "created_at": "2025-03-06T07:11:47.402167+00:00",
+                          "id": "1d96c472-172e-4dee-bbe5-fbe7ce56b4e5",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other.\n\n3. **1980s - Expansion and Standardization**: The National Science Foundation (NSF) created NSFNET in 1985, which connected various regional networks and expanded access to academic and research institutions. The Domain Name System (DNS) was introduced in 1984, making it easier to navigate the growing network.\n\n4. **1990s - The World Wide Web**: Tim Berners-Lee invented the World Wide Web in 1989, introducing the first web browser and web server. The web quickly gained popularity, leading to the first website going live in 1991. The commercialization of the internet began in the mid-1990s, with the emergence of web hosting services and e-commerce.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, leading to the rise of mobile applications and services. Cloud computing became mainstream, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is witnessing the growth of IoT, where everyday devices are connected to the internet, enhancing automation and data collection. Discussions around internet privacy, security, and regulation are also prominent as the internet continues to evolve.\n\nThe internet has transformed how we communicate, work, and access information, becoming an integral part of modern life.",
-                          "created_at": "2025-01-22T10:25:03.696816+00:00",
-                          "id": "533e7e6a-eb1b-49fd-9b76-ae35aeadc097",
+                          "attachments": null,
+                          "content": "The image shows an error message indicating \"Server selection timed out after 30000 ms.\" It mentions a problem connecting to a specific server, with an option to \"REVIEW\" the issue. There's a warning icon next to the message.",
+                          "created_at": "2025-03-06T07:11:54.899588+00:00",
+                          "id": "90459d74-ffdd-4088-a75f-a9002d5eeb09",
+                          "metadata": {
+                            "mid": "msg-ZhahmWh01hRFKAqqQ2BzkCBP"
+                          },
+                          "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
+                          "sender_type": "bot",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "session_token": null,
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
+                        },
+                        {
+                          "attachments": [
+                            {
+                              "name": "0.8697358026985564.jpeg",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.8697358026985564.jpeg"
+                            }
+                          ],
+                          "content": "Describe this image",
+                          "created_at": "2025-03-08T07:59:25.422254+00:00",
+                          "id": "10ddabba-c38a-418b-88ea-5a7df7eaa95f",
                           "metadata": {},
                           "migrated_data": false,
-                          "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "model": null,
+                          "provider": null,
+                          "sender_type": "user",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
+                        },
+                        {
+                          "attachments": null,
+                          "content": "The image captures a city skyline at sunrise or sunset. The sun is positioned low on the horizon, casting a warm glow over the skyscrapers. Tall buildings, including one with a prominent spire, are silhouetted against the vibrant sky. The street below is lined with more buildings, and the overall scene conveys a serene urban atmosphere.",
+                          "created_at": "2025-03-08T07:59:34.45648+00:00",
+                          "id": "bdd8e93c-9d80-4fa6-bf8d-f230cfadcaeb",
+                          "metadata": {
+                            "mid": "msg-Fs9PbjHF38Tg8OOvvyP2ZYBh"
+                          },
+                          "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
+                          "sender_type": "bot",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "session_token": null,
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         }
                       ]
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "properties": {
+                        "currentPage": {
+                          "type": "number",
+                          "example": 1
+                        },
+                        "pageSize": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "totalCount": {
+                          "type": "number",
+                          "example": 10
+                        },
+                        "totalPages": {
+                          "type": "number",
+                          "example": 1
+                        }
+                      }
                     }
                   }
                 },
                 "examples": {
                   "Example": {
                     "value": {
-                      "messages": [
+                      "data": [
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:21:17.514555+00:00",
-                          "id": "44c144d2-a3ed-4463-9c86-5cbe445a7a2b",
+                          "attachments": [
+                            {
+                              "name": "0.806494468977148.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.806494468977148.png"
+                            },
+                            {
+                              "name": "0.47461492756254064.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.47461492756254064.png"
+                            },
+                            {
+                              "name": "0.34089790317279434.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.34089790317279434.png"
+                            }
+                          ],
+                          "content": "Describe this image",
+                          "created_at": "2025-03-05T04:25:58.059835+00:00",
+                          "id": "b10506a1-1ca7-4336-a72b-f37782c6a054",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other, leading to the concept of an \"inter-network\" or internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: In 1991, Tim Berners-Lee introduced the World Wide Web, a system that allowed users to access and share information through hypertext links. This led to the development of web browsers, such as Mosaic in 1993, which made the web more accessible to the general public. The commercialization of the internet began in the mid-1990s, leading to a rapid increase in users and websites.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster and more reliable connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people communicate and share information online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, with more people accessing the web on the go. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of the Internet of Things (IoT), where everyday devices are connected to the internet, enabling data exchange and automation. Discussions around internet privacy, security, and regulation continue to evolve as the internet becomes increasingly integral to daily life.\n\nThe internet has transformed communication, commerce, education, and entertainment, shaping modern society in profound ways.",
-                          "created_at": "2025-01-22T10:21:29.088338+00:00",
-                          "id": "c97a62fb-d57b-43c0-b735-456787edc4f6",
+                          "attachments": null,
+                          "content": "The images depict a serene camping scene set in a mountainous landscape. \n\n1. **First Image**: A tent is pitched on a grassy area surrounded by tall trees and boulders, with majestic snow-capped mountains in the background. A campfire is burning nearby, creating a cozy atmosphere.\n\n2. **Second Image**: A robot stands in the same picturesque setting, next to the tent. The robot has a vintage design, featuring metallic elements and a friendly appearance, suggesting it might be a companion for outdoor adventures.\n\n3. **Third Image**: Another robot, similar in style to the second, is present in a slightly different area of the campsite. This robot also has a vintage look, wearing a cap and equipped with various tools, indicating it might assist with camping tasks.\n\nOverall, the images blend elements of nature with whimsical robotic characters, creating a unique and imaginative camping scenario.",
+                          "created_at": "2025-03-05T04:26:10.241508+00:00",
+                          "id": "85706af7-c3f1-413a-b4fb-43eda8d258d7",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": "gpt-4o-mini",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:22:20.710219+00:00",
-                          "id": "9e95ba52-4898-4b2c-a3be-3dc13362a52d",
+                          "attachments": [
+                            {
+                              "name": "0.031071150695289873.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.031071150695289873.png"
+                            },
+                            {
+                              "name": "0.5423937996768102.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.5423937996768102.png"
+                            },
+                            {
+                              "name": "0.7798706640238224.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.7798706640238224.png"
+                            }
+                          ],
+                          "content": "Describe these images",
+                          "created_at": "2025-03-05T07:08:50.863723+00:00",
+                          "id": "e69359c7-caf7-419b-906e-0f478a94ccde",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research to develop a robust, fault-tolerant communication system, leading to the creation of ARPANET (Advanced Research Projects Agency Network) in 1969. ARPANET was the first network to implement the packet-switching concept, which breaks data into packets for transmission.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for data transmission over networks. This led to the establishment of the term \"internet\" as a shorthand for interconnected networks.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the growth of the internet beyond ARPANET, with the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the network. The National Science Foundation (NSF) created NSFNET, a more extensive network that connected various regional networks, further expanding access.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public, leading to a rapid increase in users and websites.\n\n5. **2000s - Commercialization and Social Media**: The internet became commercialized in the late 1990s, leading to the dot-com boom. The 2000s saw the rise of social media platforms, search engines, and e-commerce, fundamentally changing how people interacted online.\n\n6. **2010s - Mobile and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the internet. Cloud computing emerged, allowing for data storage and services over the internet, further enhancing connectivity and accessibility.\n\n7. **2020s - The Future**: As of 2025, the internet continues to evolve with advancements in artificial intelligence, the Internet of Things (IoT), and 5G technology, promising even greater connectivity and new applications.\n\nThe internet has become an integral part of modern life, influencing communication, commerce, education, and entertainment globally.",
-                          "created_at": "2025-01-22T10:22:31.080874+00:00",
-                          "id": "dcc9d601-f8d8-4302-be47-92919ad8e2d3",
+                          "attachments": null,
+                          "content": "Here are descriptions of the images:\n\n1. **First Image**: A serene camping scene featuring a large tent set in a lush green meadow. The background showcases majestic mountains with snow-capped peaks under a clear blue sky. A small campfire is burning nearby, surrounded by rocks, adding to the tranquil outdoor atmosphere.\n\n2. **Second Image**: A whimsical robot stands in the same picturesque camping setting. The robot has a vintage design with metallic features and large, expressive eyes. It appears to be exploring the area, with the tent and mountains in the background, creating a blend of nature and technology.\n\n3. **Third Image**: Another robot, similar in style to the second, is depicted in the same outdoor environment. This robot has a different design, featuring a cap and a utility belt, suggesting it might be equipped for camping or exploration. The background includes a cabin and additional tents, enhancing the camping theme.",
+                          "created_at": "2025-03-05T07:09:05.423355+00:00",
+                          "id": "9a0e408d-1588-4d64-9e33-814a56b0543b",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": "gpt-4o-mini",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:24:13.710599+00:00",
-                          "id": "15931e1a-688b-446c-ab08-057ee0e36691",
+                          "attachments": [
+                            {
+                              "name": "0.3554636060885503.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.3554636060885503.png"
+                            }
+                          ],
+                          "content": "describe this image",
+                          "created_at": "2025-03-06T06:54:57.123427+00:00",
+                          "id": "5a5e3b4d-9894-4e78-be11-fbd637034c27",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Conceptual Foundation**: The idea of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission that breaks data into packets for more efficient routing. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the fundamental communication protocols for the internet. This allowed different networks to interconnect, forming the basis for the modern internet.\n\n3. **1980s - Expansion and Standardization**: The 1980s saw the introduction of the Domain Name System (DNS) in 1983, which made it easier to navigate the internet by using human-readable addresses instead of numerical IP addresses. The National Science Foundation (NSF) created NSFNET, which connected various regional networks and expanded access to academic and research institutions.\n\n4. **1990s - The World Wide Web**: The invention of the World Wide Web by Tim Berners-Lee in 1989 and its subsequent public release in 1991 revolutionized the internet. The introduction of web browsers, such as Mosaic in 1993, made the web accessible to the general public. This decade also saw the commercialization of the internet, leading to the dot-com boom.\n\n5. **2000s - Broadband and Social Media**: The early 2000s marked the transition from dial-up to broadband internet, significantly increasing connection speeds. Social media platforms like Facebook (2004) and Twitter (2006) emerged, changing how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile internet access transformed how users engage with the web. Cloud computing services became popular, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is characterized by the growth of IoT, where everyday devices are connected to the internet, and advancements in artificial intelligence, 5G technology, and cybersecurity.\n\nThe internet continues to evolve, impacting nearly every aspect of modern life, from communication and commerce to education and entertainment.",
-                          "created_at": "2025-01-22T10:24:24.417612+00:00",
-                          "id": "6389ee09-1aac-4a7b-92d9-a0528ce38241",
-                          "metadata": {},
+                          "attachments": null,
+                          "content": "The image depicts a serene camping scene. In the foreground, there is a pitched tent on a grassy area surrounded by rocks. Next to the tent, a campfire is burning, adding warmth and ambiance to the setting. In the background, a range of majestic, snow-capped mountains rises beneath a clear blue sky with a bright sun. Tall evergreen trees frame the scene, contributing to the tranquil and natural atmosphere.",
+                          "created_at": "2025-03-06T06:55:07.999262+00:00",
+                          "id": "4492f637-8a3a-4bfa-abc6-8dd1a561926b",
+                          "metadata": {
+                            "mid": "msg-Mzs8wSy4weVyiALOzzZRDles"
+                          },
                           "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
                           "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         },
                         {
-                          "content": "Tell me about the history of the internet.",
-                          "created_at": "2025-01-22T10:24:54.307765+00:00",
-                          "id": "28892e53-f6a6-4591-85ad-f5fb34c6a2f4",
+                          "attachments": [
+                            {
+                              "name": "0.4848606669311497.png",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.4848606669311497.png"
+                            }
+                          ],
+                          "content": "describe this image pls",
+                          "created_at": "2025-03-06T07:11:47.402167+00:00",
+                          "id": "1d96c472-172e-4dee-bbe5-fbe7ce56b4e5",
                           "metadata": {},
                           "migrated_data": false,
+                          "model": null,
+                          "provider": null,
                           "sender_type": "user",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
                         },
                         {
-                          "content": "The history of the internet is a fascinating journey that spans several decades, marked by significant technological advancements and the collaboration of various individuals and organizations. Here’s a brief overview:\n\n1. **1960s - The Origins**: The concept of a network of computers began in the 1960s. The U.S. Department of Defense funded research into packet switching, a method of data transmission. This led to the development of ARPANET (Advanced Research Projects Agency Network) in 1969, which is considered the first operational packet-switching network.\n\n2. **1970s - Protocol Development**: In the early 1970s, Vint Cerf and Bob Kahn developed the Transmission Control Protocol (TCP) and Internet Protocol (IP), which became the foundational protocols for the internet. This allowed different networks to communicate with each other.\n\n3. **1980s - Expansion and Standardization**: The National Science Foundation (NSF) created NSFNET in 1985, which connected various regional networks and expanded access to academic and research institutions. The Domain Name System (DNS) was introduced in 1984, making it easier to navigate the growing network.\n\n4. **1990s - The World Wide Web**: Tim Berners-Lee invented the World Wide Web in 1989, introducing the first web browser and web server. The web quickly gained popularity, leading to the first website going live in 1991. The commercialization of the internet began in the mid-1990s, with the emergence of web hosting services and e-commerce.\n\n5. **2000s - Broadband and Social Media**: The early 2000s saw the rise of broadband internet, which provided faster connections. Social media platforms like Facebook (2004) and Twitter (2006) emerged, transforming how people interacted online.\n\n6. **2010s - Mobile Internet and Cloud Computing**: The proliferation of smartphones and mobile devices changed internet usage patterns, leading to the rise of mobile applications and services. Cloud computing became mainstream, allowing users to store and access data online.\n\n7. **2020s - The Internet of Things (IoT) and Beyond**: The current decade is witnessing the growth of IoT, where everyday devices are connected to the internet, enhancing automation and data collection. Discussions around internet privacy, security, and regulation are also prominent as the internet continues to evolve.\n\nThe internet has transformed how we communicate, work, and access information, becoming an integral part of modern life.",
-                          "created_at": "2025-01-22T10:25:03.696816+00:00",
-                          "id": "533e7e6a-eb1b-49fd-9b76-ae35aeadc097",
+                          "attachments": null,
+                          "content": "The image shows an error message indicating \"Server selection timed out after 30000 ms.\" It mentions a problem connecting to a specific server, with an option to \"REVIEW\" the issue. There's a warning icon next to the message.",
+                          "created_at": "2025-03-06T07:11:54.899588+00:00",
+                          "id": "90459d74-ffdd-4088-a75f-a9002d5eeb09",
+                          "metadata": {
+                            "mid": "msg-ZhahmWh01hRFKAqqQ2BzkCBP"
+                          },
+                          "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
+                          "sender_type": "bot",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "session_token": null,
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
+                        },
+                        {
+                          "attachments": [
+                            {
+                              "name": "0.8697358026985564.jpeg",
+                              "url": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/user_images/internal/0.8697358026985564.jpeg"
+                            }
+                          ],
+                          "content": "Describe this image",
+                          "created_at": "2025-03-08T07:59:25.422254+00:00",
+                          "id": "10ddabba-c38a-418b-88ea-5a7df7eaa95f",
                           "metadata": {},
                           "migrated_data": false,
-                          "sender_type": "bot",
-                          "session_id": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14",
+                          "model": null,
+                          "provider": null,
+                          "sender_type": "user",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
                           "session_token": null,
-                          "tokens_used": 0
+                          "tokens_used": 0,
+                          "tool_calls": null,
+                          "tool_results": null
+                        },
+                        {
+                          "attachments": null,
+                          "content": "The image captures a city skyline at sunrise or sunset. The sun is positioned low on the horizon, casting a warm glow over the skyscrapers. Tall buildings, including one with a prominent spire, are silhouetted against the vibrant sky. The street below is lined with more buildings, and the overall scene conveys a serene urban atmosphere.",
+                          "created_at": "2025-03-08T07:59:34.45648+00:00",
+                          "id": "bdd8e93c-9d80-4fa6-bf8d-f230cfadcaeb",
+                          "metadata": {
+                            "mid": "msg-Fs9PbjHF38Tg8OOvvyP2ZYBh"
+                          },
+                          "migrated_data": false,
+                          "model": "gpt-4o",
+                          "provider": "openai",
+                          "sender_type": "bot",
+                          "session_id": "f081d259-6c72-4eca-8687-1b6ed716257e",
+                          "session_token": null,
+                          "tokens_used": 0,
+                          "tool_calls": [],
+                          "tool_results": []
                         }
-                      ]
+                      ],
+                      "metadata": {
+                        "currentPage": 1,
+                        "pageSize": 10,
+                        "totalCount": 10,
+                        "totalPages": 1
+                      }
                     }
                   }
                 }
@@ -5582,7 +5919,7 @@
           "required": true,
           "schema": {
             "type": "string",
-            "example": "7a04ca3c-4ea8-44f5-b14d-f61bec64ea14"
+            "example": "f081d259-6c72-4eca-8687-1b6ed716257e"
           }
         }
       ]
