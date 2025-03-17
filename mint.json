@@ -55,7 +55,8 @@
         "guides/chatbot-widget",
         "guides/ai-voice-agent",
         "guides/leads",
-        "guides/tools"
+        "guides/tools",
+        "guides/using-with-ollama-models"
       ]
     },
     {
