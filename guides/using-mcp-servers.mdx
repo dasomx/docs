@@ -40,18 +40,18 @@ MCP servers act as bridges between your chatbot and external services, allowing 
    - Choose "Cursor" as your platform
    - Copy the generated SSE endpoint URL
 
-2. **Install the Server**:
-
-   - Paste the SSE endpoint URL in the installation dialog
-   - Configure server settings:
-     - **Active**: Enable/disable the server
-
-3. **Using a custom local server**:
+2. **Using a custom local server**:
 
    Run an MCP SSE proxy to turn your local MCP server into a remote one. This
    [example repo](https://github.com/sparfenyuk/mcp-proxy) shows you how to run an MCP proxy to turn a local MCP server
    into a remote / SSE MCP server. If you follow this route, you will need to
    make sure you expose to appropriate ports via ngrok or similar tools.
+
+3. **Install the Server**:
+
+   - Paste the SSE endpoint URL in the installation dialog
+   - Configure server settings:
+     - **Active**: Enable/disable the server
 
 ### Authentication
 
@@ -68,6 +68,8 @@ For services requiring authentication (e.g., Google Sheets, Google Calendar):
   The chatbot can access these servers only upon successful authentication with
   the okchat dashboard.
 </Note>
+
+<Note>Use claude 3.5 sonnet model for best results.</Note>
 
 ## Important Concepts
 
