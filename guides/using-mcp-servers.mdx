@@ -1,0 +1,154 @@
+---
+title: Model Context Protocol (MCP) Servers Guide (Coming Soon)
+description: Model Context Protocol (MCP) servers extend your chatbot's capabilities by connecting it to external services and data sources. This guide explains how to set up and use MCP servers in your chatbot.
+---
+
+## Understanding MCP Servers
+
+MCP servers act as bridges between your chatbot and external services, allowing it to:
+
+- Access and manipulate data from various sources
+- Integrate with third-party services
+- Enhance the chatbot's functionality with real-time data
+
+## Server Types
+
+### SSE (Server-Sent Events) Servers
+
+- Most MCP servers use SSE for real-time communication
+- Require an endpoint URL from mcp.composio.dev
+- Support various services like Google Sheets, Airtable, Trello, etc.
+
+### Command-based Servers (Coming Soon)
+
+- Run with npx commands on our server
+
+## Setting Up MCP Servers
+
+### Getting Started
+
+1. Navigate to your chatbot's MCP Servers page
+2. Browse available server templates
+3. Click "Install" on your desired server
+
+### Configuration Steps
+
+1. **Get the SSE Endpoint**:
+
+   - Visit [mcp.composio.dev](https://mcp.composio.dev)
+   - Select your desired service
+   - Choose "Cursor" as your platform
+   - Copy the generated SSE endpoint URL
+
+2. **Install the Server**:
+   - Paste the SSE endpoint URL in the installation dialog
+   - Configure server settings:
+     - **Active**: Enable/disable the server
+
+### Authentication
+
+For services requiring authentication (e.g., Google Sheets, Google Calendar):
+
+1. Click "Install" on the service
+2. Enter the SSE endpoint URL
+3. The authentication will be automatically associated with the URL
+4. Simply chat with the chatbot to authenticate, for example ("authenticate with google sheets")
+5. Visit the URL provided by the chatbot to complete the authentication process
+
+<Note>
+  MCP servers are not available for public use due to obvious security reasons.
+  The chatbot can access these servers only upon successful authentication with
+  the okchat dashboard.
+</Note>
+
+## Important Concepts
+
+### Active Servers Limit
+
+- Maximum of 3 active MCP servers per chatbot
+- This limit ensures optimal performance
+- You can install more servers but only 3 can be active at once
+- Toggle servers active/inactive as needed
+
+### Public vs Private Servers
+
+- **Public Servers**: Available for use by other chatbots
+- **Private Servers**: Only accessible by your chatbot
+- Consider making servers public if you want to share functionality
+
+### Best Practices
+
+1. **Server Management**:
+
+   - Keep only necessary servers active
+   - Regularly review and update server configurations
+   - Test server connections after setup
+
+2. **Security**:
+
+   - Use authenticated endpoints for sensitive data
+   - Keep authentication credentials secure
+   - Review public/private settings regularly
+
+3. **Performance**:
+   - Monitor server response times
+   - Deactivate unused servers
+   - Use appropriate rate limits
+
+## Available MCP Servers
+
+### Google Sheets
+
+- Store and retrieve data from spreadsheets
+- Real-time updates and modifications
+- Requires Google authentication
+
+### Airtable
+
+- Connect to Airtable bases
+- Access and modify records
+- Real-time database operations
+
+### Trello
+
+- Manage boards and cards
+- Track tasks and projects
+- Real-time updates
+
+### Google Calendar
+
+- Manage events and schedules
+- Set reminders
+- Check availability
+
+### Mem0
+
+- Enhanced memory capabilities
+- Persistent context storage
+- Improved conversation tracking
+
+### And More
+
+- Additional servers are regularly added
+- Check the templates page for the latest options
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Connection Problems**:
+
+   - Verify the SSE endpoint URL
+   - Check server status at mcp.composio.dev
+   - Ensure authentication is valid
+
+2. **Authentication Errors**:
+
+   - Re-authenticate the service
+   - Check permission settings
+   - Verify API access
+
+3. **Performance Issues**:
+   - Review active server count
+   - Check server logs
+   - Monitor rate limits

@@ -56,7 +56,8 @@
         "guides/ai-voice-agent",
         "guides/leads",
         "guides/tools",
-        "guides/using-with-ollama-models"
+        "guides/using-with-ollama-models",
+        "guides/using-mcp-servers"
       ]
     },
     {
