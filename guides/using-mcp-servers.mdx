@@ -19,9 +19,12 @@ MCP servers act as bridges between your chatbot and external services, allowing 
 - Require an endpoint URL from mcp.composio.dev
 - Support various services like Google Sheets, Airtable, Trello, etc.
 
-### Command-based Servers (Coming Soon)
+### Command-based Local Servers
 
-- Run with npx commands on our server
+Run an MCP SSE proxy to turn your local MCP server into a remote one. This
+[example repo](https://github.com/sparfenyuk/mcp-proxy) shows you how to run an MCP proxy to turn a local MCP server
+into a remote / SSE MCP server. If you follow this route, you will need to
+make sure you expose to appropriate ports via ngrok or similar tools.
 
 ## Setting Up MCP Servers
 
