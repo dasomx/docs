@@ -197,4 +197,120 @@ This guide covers best practices for preparing training data to ensure optimal p
 <Warning>
   Always backup your training data before making major changes or updates to
   avoid data loss.
-</Warning>{" "}
+</Warning>
+
+## Content Quality Guidelines
+
+### Preventing Hallucinations
+
+1. **Explicit References**
+
+   - Replace pronouns with specific nouns
+   - Examples:
+     - ❌ "It provides fast shipping"
+     - ✅ "Amazon Prime provides fast shipping"
+     - ❌ "They can help with returns"
+     - ✅ "Customer service representatives can help with returns"
+
+2. **Specific Quantities and Metrics**
+
+   - Use exact numbers when possible
+   - Include units of measurement
+   - Examples:
+     - ❌ "Delivery takes a few days"
+     - ✅ "Delivery takes 3-5 business days"
+     - ❌ "The product is quite large"
+     - ✅ "The product dimensions are 10" x 12" x 15""
+
+3. **Clear Entity References**
+
+   - Avoid ambiguous references
+   - Name specific products, services, or departments
+   - Examples:
+     - ❌ "Contact support for assistance"
+     - ✅ "Contact technical support at support@company.com for assistance"
+     - ❌ "Use the tool to analyze data"
+     - ✅ "Use the Google Analytics dashboard to analyze website traffic data"
+
+4. **Temporal Clarity**
+   - Specify exact dates or time periods
+   - Use absolute references instead of relative ones
+   - Examples:
+     - ❌ "The feature was recently added"
+     - ✅ "The feature was added in January 2024"
+     - ❌ "Updates coming soon"
+     - ✅ "Updates scheduled for Q2 2024"
+
+### Writing Style Guidelines
+
+1. **Factual Language**
+
+   - Use concrete, verifiable statements
+   - Avoid subjective descriptions
+   - Examples:
+     - ❌ "The best solution for your needs"
+     - ✅ "A solution that offers features A, B, and C"
+     - ❌ "Amazing performance improvements"
+     - ✅ "30% faster response time compared to version 1.0"
+
+2. **Consistent Terminology**
+
+   - Maintain a glossary of approved terms
+   - Use the same term for the same concept
+   - Examples:
+     - ❌ "login, sign-in, log in" (mixing terms)
+     - ✅ "login" (consistent usage)
+     - ❌ "customer, user, client" (mixing terms)
+     - ✅ "user" (consistent usage)
+
+3. **Structured Information**
+
+   - Break down complex concepts
+   - Use lists and tables for clarity
+   - Include step-by-step instructions
+   - Example:
+
+     ```markdown
+     To reset your password:
+
+     1. Navigate to login.company.com
+     2. Click "Forgot Password"
+     3. Enter your email address
+     4. Follow the instructions in the reset email
+     ```
+
+4. **Context Completeness**
+   - Include all necessary context in each answer
+   - Avoid assuming prior knowledge
+   - Examples:
+     - ❌ "Enable the feature in settings"
+     - ✅ "Enable the dark mode feature in User Settings > Display > Theme"
+     - ❌ "Use the API key to authenticate"
+     - ✅ "Use the API key from your dashboard at api.company.com/keys to authenticate requests"
+
+### Data Validation Checklist
+
+1. **Accuracy Verification**
+
+   - Cross-reference with official documentation
+   - Verify URLs and email addresses
+   - Confirm product specifications
+   - Check policy statements
+
+2. **Completeness Check**
+
+   - All required fields are filled
+   - No missing steps in procedures
+   - Contact information is complete
+   - Reference links are provided
+
+3. **Consistency Review**
+   - Terminology alignment
+   - Format standardization
+   - Unit consistency
+   - Date and time formats
+
+<Note>
+  When preparing training data, remember that explicit, specific information
+  helps prevent AI hallucinations and improves response accuracy.
+</Note>
