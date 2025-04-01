@@ -1,0 +1,200 @@
+---
+title: Training Data Preparation Best Practices
+description: Learn how to prepare high-quality training data for your chatbot, including Q&A pairs, document uploads, and CSV formatting guidelines.
+---
+
+## Overview
+
+This guide covers best practices for preparing training data to ensure optimal performance of your chatbot. We'll cover different data formats and provide specific guidelines for each type.
+
+## Q&A Pairs
+
+### Individual Entry Guidelines
+
+- Keep questions clear and specific
+- Provide comprehensive answers
+- Use consistent formatting
+- Include relevant context
+- Avoid duplicate questions
+
+### Batch Upload (JSON)
+
+```json
+[
+  {
+    "question": "What are your business hours?",
+    "answer": "We are open Monday through Friday, 9 AM to 5 PM EST."
+  }
+]
+```
+
+#### JSON Format Requirements
+
+- Use an array of objects
+- Each object must have "question" and "answer" fields
+- Use UTF-8 encoding
+- Maximum file size: 10MB
+- Validate JSON structure before upload
+
+#### Best Practices
+
+1. **Question Formatting**
+
+   - Use natural language
+   - Include variations of similar questions
+   - Keep questions concise but descriptive
+
+2. **Answer Quality**
+   - Provide complete, accurate information
+   - Use consistent tone and style
+   - Include necessary context
+   - Break down complex answers into digestible parts
+
+## Document Uploads
+
+### Supported File Types
+
+- PDF (.pdf)
+- Markdown (.md, .mdx)
+- Microsoft Word (.docx, .doc)
+- CSV (.csv)
+- JSON (.json)
+
+### General File Guidelines
+
+1. **File Naming**
+
+   - Use descriptive names
+   - Follow kebab-case convention
+   - Include version numbers if applicable
+   - Examples:
+     - ✅ `product-return-policy-2024.pdf`
+     - ✅ `customer-faqs-v2.md`
+     - ❌ `doc1.pdf`
+     - ❌ `New Document (1).docx`
+
+2. **File Organization**
+
+   - Group related documents
+   - Use consistent naming patterns
+   - Keep file sizes manageable
+   - Remove unnecessary metadata
+
+3. **Content Structure**
+   - Use clear headings and sections
+   - Include a table of contents for longer documents
+   - Maintain consistent formatting
+   - Remove irrelevant content
+
+## CSV Best Practices
+
+### File Structure
+
+1. **Headers**
+
+   - Use clear, descriptive column names
+   - Avoid spaces (use underscores or hyphens)
+   - Include a description row if needed
+   - Example:
+     ```csv
+     title,description,category
+     Product Returns,How to process product returns,Support
+     ```
+
+2. **Data Cleaning**
+
+   - Remove empty rows
+   - Fill or remove blank cells
+   - Standardize data formats
+   - Check for and remove duplicate entries
+
+3. **Formatting Guidelines**
+   - Use UTF-8 encoding
+   - Consistent date formats (YYYY-MM-DD)
+   - Proper escaping of special characters
+   - Consistent number formatting
+
+### CSV Content Best Practices
+
+1. **Data Organization**
+
+   - One concept per row
+   - Consistent data types per column
+   - Logical column ordering
+   - Appropriate data granularity
+
+2. **Quality Control**
+   - Validate data accuracy
+   - Check for formatting consistency
+   - Remove trailing spaces
+   - Verify character encoding
+
+## General Tips
+
+1. **Data Quality**
+
+   - Regular content updates
+   - Version control
+   - Quality assurance reviews
+   - Consistent terminology
+
+2. **Performance Optimization**
+
+   - Compress large files
+   - Split very large datasets
+   - Remove redundant information
+   - Optimize images and media
+
+3. **Maintenance**
+   - Schedule regular reviews
+   - Document changes
+   - Archive outdated versions
+   - Monitor chatbot performance
+
+## Common Pitfalls to Avoid
+
+1. **Content Issues**
+
+   - Inconsistent formatting
+   - Duplicate information
+   - Outdated content
+   - Ambiguous answers
+
+2. **Technical Issues**
+
+   - Wrong file encodings
+   - Missing data validation
+   - Improper file organization
+   - Oversized files
+
+3. **Process Issues**
+   - Lack of version control
+   - Poor documentation
+   - Inconsistent naming conventions
+   - Missing backup procedures
+
+## Testing and Validation
+
+1. **Before Upload**
+
+   - Validate file formats
+   - Check for errors
+   - Review content quality
+   - Test with sample queries
+
+2. **After Upload**
+   - Verify data integration
+   - Test chatbot responses
+   - Monitor performance
+   - Gather user feedback
+
+<Note>
+  Regular maintenance and updates of your training data will ensure optimal
+  chatbot performance. Set up a review schedule to keep your content fresh and
+  accurate.
+</Note>
+
+<Warning>
+  Always backup your training data before making major changes or updates to
+  avoid data loss.
+</Warning>{" "}
