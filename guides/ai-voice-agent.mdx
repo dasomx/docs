@@ -3,94 +3,261 @@ title: AI Voice Agent
 description: Learn how to enable voice-based interactions with your chatbot using the AI Voice Agent feature in OKChat AI.
 ---
 
+<Frame>
+  <img
+    src="/images/logo/mascot-gradient.svg"
+    alt="OKChat AI Voice Agent Mascot"
+    style={{ width: "120px", margin: "0 auto" }}
+  />
+</Frame>
+
+<Info>
+  <b>Preview Feature:</b> The AI Voice Agent is currently in preview. For
+  access, please reach out to{" "}
+  <a href="mailto:info@dasomx.com">info@dasomx.com</a>.
+</Info>
+
 ## Introduction
 
-The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based interactions with your chatbot. This feature allows users to engage with the chatbot using voice commands, making it ideal for hands-free operations and voice-activated devices. Please note that this is a preview feature and is not yet available to all users. For access, please reach out to **info@dasomx.com**.
+The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based interactions with your agent. This feature allows users to engage with the agent using natural language, making it ideal for hands-free operations and voice-activated devices.
 
 ---
 
 ## Key Features
 
-- **Voice Interaction**: Users can speak to the chatbot, and the AI Voice Agent will respond with voice output.
-- **Customizable Voice Widget**: Customize the appearance, voice, and behavior of the voice widget to match your brand.
-- **Real-Time Speech Recognition**: The AI Voice Agent uses advanced speech recognition to understand and process user commands.
-- **Dynamic Responses**: The chatbot can provide real-time, context-aware responses based on user input.
+<CardGroup cols={2}>
+  <Card title="Voice Interaction" icon="microphone">
+    Users can speak to the chatbot, and the AI Voice Agent will respond with
+    voice output.
+  </Card>
+  <Card title="Advanced Turn Detection" icon="language">
+    Detects when a user is speaking and supports both English and Multilingual
+    turn detection.
+  </Card>
+  <Card title="Customizable Voice Widget" icon="sliders">
+    Customize the appearance, voice, and behavior of the voice widget to match
+    your brand.
+  </Card>
+  <Card title="Real-Time Speech Recognition" icon="waveform">
+    Uses advanced speech recognition to understand and process user commands.
+  </Card>
+  <Card title="Dynamic Responses" icon="bolt">
+    Provides real-time, context-aware responses based on user input.
+  </Card>
+  <Card title="Voice Activity Detection (VAD)" icon="volume">
+    Uses voice activity detection to process user commands efficiently.
+  </Card>
+  <Card title="Custom Greetings" icon="hand-wave">
+    Set custom greetings for the AI Voice Agent.
+  </Card>
+  <Card title="Default Tools" icon="toolbox">
+    Web search, URL scraping, weather, and knowledge base search are available
+    by default.
+  </Card>
+</CardGroup>
+
+---
+
+## Providers
+
+<CardGroup cols={2}>
+  <Card title="OpenAI Realtime" icon="robot">
+    Uses OpenAI's realtime API with OKChat's knowledge base and tools.
+    <br />
+    <b>Features:</b> Different voices, keyword detection, voice vibe.
+  </Card>
+  <Card title="Gemini Live" icon="google">
+    Uses Google's Gemini API for seamless voice experience.
+    <br />
+    <b>Features:</b> Different voices, keyword detection, voice vibe.
+  </Card>
+  <Card title="OKCHAT Provider (Recommended)" icon="star">
+    Uses OKChat's own pipeline, optimized for the platform.
+    <br />
+    <b>Features:</b> Different voices, LLM model selection, TTS/STT model
+    selection, keyword detection, voice vibe.
+  </Card>
+</CardGroup>
 
 ---
 
 ## Getting Started with AI Voice Agent
 
-### 1. **Accessing the AI Voice Agent**
-
-- Log in to your OKChat AI dashboard.
-- Navigate to the **AI Voice Agent Widget** section under **Integration**.
-- If you do not see this option, contact **info@dasomx.com** to request access to the preview feature.
-
-### 2. **Configuring the Voice Widget**
-
-- Customize the voice widget to suit your needs:
-  - **Avatar**: Choose an avatar for the voice widget.
-  - **Text**: Customize the text displayed in the widget.
-  - **Appearance**: Adjust the widget's visual appearance (e.g., colors, size).
-  - **Voice**: Select the voice type and tone for the AI Voice Agent.
-
-### 3. **Voice Activity Detection (VAD) Settings**
-
-- **VAD Threshold**: Adjust the sensitivity of speech detection (default: 0.5). Lower values make the widget more sensitive to speech.
-- **Prefix Padding (ms)**: Set the minimum duration of speech required to start a new speech chunk (default: 500ms).
-- **Silence Duration (ms)**: Define the minimum duration of silence before ending the speech segment (default: 1000ms).
-
-### 4. **Response Settings**
-
-- **Temperature**: Adjust the randomness of the AI's responses (default: 0.7). Higher values make responses more creative, while lower values make them more deterministic.
-- **Max Output Tokens**: Limit the length of the chatbot's responses (default: 2048 tokens). One token roughly corresponds to one word.
-
-### 5. **Embedding the Voice Widget**
-
-- Copy the embed code provided in the widget configuration section.
-- Paste the code into your website's HTML to enable the voice widget.
-- Example embed code:
-  ```html
-  <script
-    src="http://localhost:3000/chatbot-voice-widget.js"
-    data-chatbot-id="5afe16ed-5fd2-4552-a993-903bc9c32bb6"
-  ></script>
-  ```
+<Steps>
+  <Step title="Accessing the AI Voice Agent">
+    Log in to your OKChat AI dashboard.
+    <br />
+    Navigate to the <b>AI Voice Agent</b> section under <b>Integration</b>.
+    <br />
+    If you do not see this option, contact{" "}
+    <a href="mailto:info@dasomx.com">info@dasomx.com</a> to request access.
+  </Step>
+  <Step title="Configuring the Voice Agent">
+    <ul>
+      <li>
+        <b>System Prompt:</b> Set the system prompt for the AI Voice Agent.
+      </li>
+      <li>
+        <b>Provider:</b> Choose the provider for the AI Voice Agent.
+      </li>
+      <li>
+        <b>Model:</b> Choose the model for the AI Voice Agent.
+      </li>
+      <li>
+        <b>Turn Detection:</b> Choose the turn detection method.
+      </li>
+      <li>
+        <b>STT/TTS Model:</b> Choose the STT/TTS model for the AI Voice Agent.
+      </li>
+      <li>
+        <b>Language:</b> Choose the language for the AI Voice Agent or
+        <b>Auto</b> to detect the language automatically.
+      </li>
+      <li>
+        <b>Voice:</b> Select the voice type and tone from various providers.
+      </li>
+      <li>
+        <b>Keyword Detection:</b> Set keywords for the AI Voice Agent to listen
+        to.
+      </li>
+      <li>
+        <b>Voice Vibe:</b> Choose the voice vibe.
+      </li>
+      <li>
+        <b>Greetings:</b> Set custom greetings.
+      </li>
+      <li>
+        <b>Avatar, Text, Appearance:</b> Customize the widget's look and feel.
+      </li>
+    </ul>
+  </Step>
+  <Step title="Voice Activity Detection (VAD) Settings">
+    <ul>
+      <li>
+        <b>VAD Threshold:</b> Adjust sensitivity (default: 0.5).
+      </li>
+      <li>
+        <b>Prefix Padding (ms):</b> Minimum speech duration to start a chunk
+        (default: 500ms).
+      </li>
+      <li>
+        <b>Silence Duration (ms):</b> Minimum silence before ending a segment
+        (default: 1000ms).
+      </li>
+    </ul>
+  </Step>
+  <Step title="Response Settings">
+    <ul>
+      <li>
+        <b>Temperature:</b> Adjust response randomness (default: 0.7).
+      </li>
+      <li>
+        <b>Max Output Tokens:</b> Limit response length (default: 2048 tokens).
+      </li>
+    </ul>
+  </Step>
+  <Step title="Embedding the Voice Widget">
+    Copy the embed code from the widget configuration and paste it into your
+    website's HTML.
+    <br />
+    <CodeGroup>
+      ```html
+      <script
+        src="http://localhost:3000/chatbot-voice-widget.js"
+        data-chatbot-id="5afe16ed-5fd2-4552-a993-903bc9c32bb6"
+      ></script>
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
 
 ---
 
 ## Use Cases
 
-- **Customer Support**: Provide voice-based customer support for users who prefer speaking over typing.
-- **Hands-Free Interaction**: Enable voice commands for users in environments where typing is inconvenient (e.g., driving, cooking).
-- **Accessibility**: Improve accessibility for users with disabilities by offering a voice-based interface.
+<CardGroup cols={3}>
+  <Card title="Customer Support" icon="headset">
+    Provide voice-based customer support for users who prefer speaking over
+    typing.
+  </Card>
+  <Card title="Hands-Free Interaction" icon="car">
+    Enable voice commands for users in environments where typing is inconvenient
+    (e.g., driving, cooking).
+  </Card>
+  <Card title="Accessibility" icon="universal-access">
+    Improve accessibility for users with disabilities by offering a voice-based
+    interface.
+  </Card>
+</CardGroup>
 
 ---
 
 ## Best Practices
 
-- **Test Thoroughly**: Test the voice widget in different environments to ensure accurate speech recognition.
-- **Optimize VAD Settings**: Adjust the VAD threshold, prefix padding, and silence duration to match your use case.
-- **Monitor Performance**: Regularly review the chatbot's responses and adjust the temperature and max output tokens as needed.
-- **User Guidance**: Provide clear instructions to users on how to interact with the voice widget.
+<AccordionGroup>
+  <Accordion title="Test Thoroughly">
+    Test the voice widget in different environments to ensure accurate speech
+    recognition.
+  </Accordion>
+  <Accordion title="Optimize VAD Settings">
+    Adjust the VAD threshold, prefix padding, and silence duration to match your
+    use case.
+  </Accordion>
+  <Accordion title="Monitor Performance">
+    Regularly review the chatbot's responses and adjust the temperature and max
+    output tokens as needed.
+  </Accordion>
+  <Accordion title="User Guidance">
+    Provide clear instructions to users on how to interact with the voice
+    widget.
+  </Accordion>
+</AccordionGroup>
 
 ---
 
 ## Troubleshooting
 
-- **Voice Widget Not Responding**:
-  - Ensure the embed code is correctly placed in your website's HTML.
-  - Check the VAD settings to ensure the widget is sensitive enough to detect speech.
-- **Inaccurate Responses**:
-  - Adjust the temperature setting to control the randomness of responses.
-  - Review the max output tokens to ensure responses are not too long or too short.
-- **Access Issues**:
-  - If you do not see the AI Voice Agent option in your dashboard, contact **info@dasomx.com** to request access.
+<AccordionGroup>
+  <Accordion title="Voice Widget Not Responding">
+    <ul>
+      <li>Ensure the embed code is correctly placed in your website's HTML.</li>
+      <li>
+        Check the VAD settings to ensure the widget is sensitive enough to
+        detect speech.
+      </li>
+    </ul>
+  </Accordion>
+  <Accordion title="Inaccurate Responses">
+    <ul>
+      <li>
+        Adjust the temperature setting to control the randomness of responses.
+      </li>
+      <li>
+        Review the max output tokens to ensure responses are not too long or too
+        short.
+      </li>
+    </ul>
+  </Accordion>
+  <Accordion title="Access Issues">
+    <ul>
+      <li>
+        If you do not see the AI Voice Agent option in your dashboard, contact{" "}
+        <a href="mailto:info@dasomx.com">info@dasomx.com</a> to request access.
+      </li>
+    </ul>
+  </Accordion>
+</AccordionGroup>
 
 ---
 
 ## Conclusion
 
-The AI Voice Agent is a powerful preview feature that brings voice-based interaction to your OKChat AI chatbot. By customizing the voice widget and configuring the settings, you can create a seamless and engaging experience for your users. For access to this feature, reach out to **info@dasomx.com**.
+<Info>
+  The AI Voice Agent is a powerful preview feature that brings voice-based
+  interaction to your OKChat AI chatbot. By customizing the voice widget and
+  configuring the settings, you can create a seamless and engaging experience
+  for your users. For access to this feature, reach out to{" "}
+  <a href="mailto:info@dasomx.com">info@dasomx.com</a>.
+</Info>
 
 For further assistance, refer to the OKChat AI support resources or contact our support team.
