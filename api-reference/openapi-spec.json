@@ -3493,19 +3493,11 @@
         "operationId": "queryKnowledge",
         "parameters": [
           {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "example": "bd51aac6-7bd2-46c3-acb5-e1e855bb1ef4"
-            }
-          },
-          {
             "name": "x-api-key",
             "in": "header",
             "schema": {
               "type": "string",
-              "example": "4358d60b39ef0df47f421c0d58331407ec609abb6355dfa4"
+              "example": "ba1608691d44787a7a6e951024187a82e25e3c3956ebe0b4"
             }
           }
         ],
@@ -3517,14 +3509,14 @@
                 "properties": {
                   "query": {
                     "type": "string",
-                    "example": "What's OKCHAT AI?"
+                    "example": "What's okchat ai?"
                   }
                 }
               },
               "examples": {
                 "Query Knowledge": {
                   "value": {
-                    "query": "What's OKCHAT AI?"
+                    "query": "What's okchat ai?"
                   }
                 }
               }
@@ -3535,6 +3527,24 @@
           "200": {
             "description": "Example",
             "headers": {
+              "Access-Control-Allow-Credentials": {
+                "schema": {
+                  "type": "string",
+                  "example": "true"
+                }
+              },
+              "Access-Control-Allow-Methods": {
+                "schema": {
+                  "type": "string",
+                  "example": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
               "Connection": {
                 "schema": {
                   "type": "string",
@@ -3544,7 +3554,7 @@
               "Date": {
                 "schema": {
                   "type": "string",
-                  "example": "Mon, 02 Dec 2024 06:36:52 GMT"
+                  "example": "Thu, 29 May 2025 07:16:44 GMT"
                 }
               },
               "Keep-Alive": {
@@ -3558,6 +3568,18 @@
                   "type": "string",
                   "example": "chunked"
                 }
+              },
+              "access-control-allow-headers": {
+                "schema": {
+                  "type": "string",
+                  "example": "Content-Type, x-api-key"
+                }
+              },
+              "x-telemetry": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"metadata\":{\"chatbot_id\":\"c95f17d4-e0bc-4a69-9aaa-9b7b5e6964bd\",\"organization_id\":\"123042b2-86e2-4184-a86e-95423d728815\",\"query_length\":17,\"results_count\":7,\"reranker\":\"google\"},\"isEnabled\":true}"
+                }
               }
             },
             "content": {
@@ -3565,159 +3587,102 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "chatbot": {
-                      "type": "object",
-                      "properties": {
-                        "active": {
-                          "type": "boolean",
-                          "example": true
-                        },
-                        "created_at": {
-                          "type": "string",
-                          "example": "2024-11-08T09:25:54.141252+00:00"
-                        },
-                        "description": {
-                          "type": "string",
-                          "example": "Demo AI Chatbot"
-                        },
-                        "id": {
-                          "type": "string",
-                          "example": "5afe16ed-5fd2-4552-a993-903bc9c32bb6"
-                        },
-                        "is_public": {
-                          "type": "boolean",
-                          "example": true
-                        },
-                        "name": {
-                          "type": "string",
-                          "example": "Test"
-                        },
-                        "openai_api_key": {
-                          "nullable": true,
-                          "example": null
-                        },
-                        "organization_id": {
-                          "type": "string",
-                          "example": "123042b2-86e2-4184-a86e-95423d728815"
-                        },
-                        "personality_config": {
-                          "type": "object",
-                          "properties": {
-                            "style": {
-                              "type": "string",
-                              "example": "Test"
-                            },
-                            "tone": {
-                              "type": "string",
-                              "example": "Test"
-                            }
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "content": {
+                            "type": "string",
+                            "example": "Title: What is OkChat.ai?\nChunk: 1\n\nQuestion: What is OkChat.ai?\n\nAnswer: OkChat.ai is an AI chatbot platform designed to help businesses improve operational efficiency and productivity. It allows you to create and deploy your own AI chatbot based on Large Language Models (LLMs)."
+                          },
+                          "similarity": {
+                            "type": "number",
+                            "example": 0.718238916187158
                           }
-                        },
-                        "settings": {
-                          "type": "object",
-                          "properties": {
-                            "avatar": {
-                              "type": "string",
-                              "example": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png"
-                            },
-                            "greeting": {
-                              "type": "string",
-                              "example": "Hello! How can I assist you today?"
-                            },
-                            "isRequestUserInfoEnabled": {
-                              "type": "boolean",
-                              "example": false
-                            },
-                            "isToolEnabled": {
-                              "type": "boolean",
-                              "example": true
-                            },
-                            "model": {
-                              "type": "string",
-                              "example": "gpt-4o"
-                            },
-                            "prompt": {
-                              "type": "string",
-                              "example": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information."
-                            },
-                            "snippet": {
-                              "type": "object",
-                              "properties": {
-                                "header": {
-                                  "type": "string",
-                                  "example": "오케이챗 고객응대 챗봇"
-                                },
-                                "logo": {
-                                  "type": "string",
-                                  "example": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356"
-                                },
-                                "name": {
-                                  "type": "string",
-                                  "example": "Test"
-                                },
-                                "primaryColor": {
-                                  "type": "string",
-                                  "example": "#9c2caa"
-                                },
-                                "secondaryColor": {
-                                  "type": "string",
-                                  "example": "#60d7a9"
-                                },
-                                "slogan": {
-                                  "type": "string",
-                                  "example": "Chat with us"
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "slug": {
-                          "type": "string",
-                          "example": "test-1"
-                        },
-                        "updated_at": {
-                          "type": "string",
-                          "example": "2024-12-01T14:38:45.709025+00:00"
                         }
-                      }
+                      },
+                      "example": [
+                        {
+                          "content": "Title: What is OkChat.ai?\nChunk: 1\n\nQuestion: What is OkChat.ai?\n\nAnswer: OkChat.ai is an AI chatbot platform designed to help businesses improve operational efficiency and productivity. It allows you to create and deploy your own AI chatbot based on Large Language Models (LLMs).",
+                          "similarity": 0.718238916187158
+                        },
+                        {
+                          "content": "Title: Quickstart - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nQuickstart\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n## [​](https://docs.okchat.ai/quickstart\\#introduction)  Introduction\n\nWelcome to OKCHAT.AI, an advanced platform designed to help you create and manage intelligent chatbots. With a wide range of features, including a robust knowledge base, seamless integrations, and comprehensive settings, OKCHAT.AI is your go-to solution for enhancing customer interactions.\n\n## [​](https://docs.okchat.ai/quickstart\\#getting-started)  Getting Started\n\n1. **Access Your Dashboard**: Log in to your OKCHAT.AI account and navigate to the dashboard to get an overview of your chatbot’s performance.\n\n2. **Create a New Chatbot**: If you haven’t already, start by creating a new chatbot. This can be done by selecting the “Create New” option on your dashboard.\n\n\n## [​](https://docs.okchat.ai/quickstart\\#configuring-the-knowledge-base)  Configuring the Knowledge Base\n\n1. **Add Essential Knowledge**:\n   - Navigate to the “Knowledge Base” section.\n   - Upload or input key information that your chatbot should know.\n   - Organize content into categories for easier management.\n2. **Training Data**:\n   - Use the “Training Data” section to teach your chatbot how to respond to specific queries.\n   - Input sample questions and desired answers to improve accuracy.\n\n## [​](https://docs.okchat.ai/quickstart\\#setting-up-integrations)  Setting Up Integrations\n\nSummary:\nThis section, titled \"Quickstart\" from the OKCHAT AI V2 Docs, provides an introduction to the platform and guides users through the initial steps of creating and configuring a chatbot, including accessing the dashboard, creating a new chatbot, and setting up the knowledge base and integrations.",
+                          "similarity": 0.999831
+                        },
+                        {
+                          "content": "Title: Introduction - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nIntroduction\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n# [​](https://docs.okchat.ai/introduction\\#welcome-to-okchat-ai-documentation)  Welcome to OKCHAT AI Documentation\n\nWelcome to the OKCHAT AI documentation, your comprehensive guide to mastering the OKCHAT AI platform. Whether you’re a developer, marketer, or support team member, this documentation is designed to help you unlock the full potential of OKCHAT AI, an advanced chatbot platform tailored to meet your needs.\n\n## [​](https://docs.okchat.ai/introduction\\#about-okchat-ai)  About OKCHAT AI\n\nOKCHAT AI is a powerful platform that enables you to create, customize, and deploy intelligent chatbots across various channels. With features like seamless social media integration, a wide range of plugins, and robust API access, OKCHAT AI offers a flexible solution for enhancing customer interactions and automating support processes.\n\n## [​](https://docs.okchat.ai/introduction\\#documentation-structure)  Documentation Structure\n\nThis documentation is organized into key sections to guide you through the journey of using OKCHAT AI:\n\n- **Get Started**: Begin here if you’re new to OKCHAT AI. Explore introductions, quickstart guides, and essential tutorials on knowledge bases, social media integration, chatbot widgets, and AI voice agents.\n\n- **Social Media**: Dive into detailed guides on integrating your chatbot with popular platforms like Facebook Messenger, Instagram, WhatsApp, Kakao, Line, and Naver Talk.\n\n- **Plugins**: Discover how to enhance your chatbot’s functionality with plugins for reservations, Discord, and Slack integrations.\n\nSummary:\nThis is the introduction section of the OKCHAT AI V2 Docs, providing an overview of the documentation structure and the OKCHAT AI platform. It introduces the platform's capabilities and guides users through key sections like 'Get Started', 'Social Media', and 'Plugins'.",
+                          "similarity": 1
+                        },
+                        {
+                          "content": "Title: Introduction - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nIntroduction\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n# [​](https://docs.okchat.ai/introduction\\#welcome-to-okchat-ai-documentation)  Welcome to OKCHAT AI Documentation\n\nWelcome to the OKCHAT AI documentation, your comprehensive guide to mastering the OKCHAT AI platform. Whether you’re a developer, marketer, or support team member, this documentation is designed to help you unlock the full potential of OKCHAT AI, an advanced chatbot platform tailored to meet your needs.\n\n## [​](https://docs.okchat.ai/introduction\\#about-okchat-ai)  About OKCHAT AI\n\nOKCHAT AI is a powerful platform that enables you to create, customize, and deploy intelligent chatbots across various channels. With features like seamless social media integration, a wide range of plugins, and robust API access, OKCHAT AI offers a flexible solution for enhancing customer interactions and automating support processes.\n\n## [​](https://docs.okchat.ai/introduction\\#documentation-structure)  Documentation Structure\n\nThis documentation is organized into key sections to guide you through the journey of using OKCHAT AI:\n\n- **Get Started**: Begin here if you’re new to OKCHAT AI. Explore introductions, quickstart guides, and essential tutorials on knowledge bases, social media integration, chatbot widgets, and AI voice agents.\n\n- **Social Media**: Dive into detailed guides on integrating your chatbot with popular platforms like Facebook Messenger, Instagram, WhatsApp, Kakao, Line, and Naver Talk.\n\n- **Plugins**: Discover how to enhance your chatbot’s functionality with plugins for reservations, Discord, and Slack integrations.\n\nSummary:\nThis is the introduction section of the OKCHAT AI V2 Docs, providing an overview of the documentation structure and the OKCHAT AI platform. It introduces the platform's capabilities and guides users through key sections like 'Get Started', 'Social Media', and 'Plugins'.",
+                          "similarity": 1
+                        },
+                        {
+                          "content": "Title: What can OkChat.ai do?\nChunk: 1\n\nQuestion: What can OkChat.ai do?\n\nAnswer: OkChat.ai can automate tasks, provide customer support, streamline processes, and assist employees with information retrieval. It understands natural language and can take actions within integrated systems.",
+                          "similarity": 0.641080556012444
+                        },
+                        {
+                          "content": "Title: Who is OkChat.ai for?\nChunk: 1\n\nQuestion: Who is OkChat.ai for?\n\nAnswer: OkChat.ai primarily targets small and medium-sized enterprises (SMEs) and the public sector that are interested in utilizing AI.",
+                          "similarity": 0.663983384368328
+                        },
+                        {
+                          "content": "Title: What are the key features of OkChat.ai?\nChunk: 1\n\nQuestion: What are the key features of OkChat.ai?\n\nAnswer: Key features include the ability to train chatbots with text input, file uploads, and web crawling. It also offers multilingual customer support.",
+                          "similarity": 0.642547290249264
+                        }
+                      ]
+                    },
+                    "similarity_threshold_setting": {
+                      "type": "number",
+                      "example": 0.45
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "OK"
+                    },
+                    "total_docs": {
+                      "type": "number",
+                      "example": 7
                     }
                   }
                 },
                 "examples": {
                   "Example": {
                     "value": {
-                      "chatbot": {
-                        "active": true,
-                        "created_at": "2024-11-08T09:25:54.141252+00:00",
-                        "description": "Demo AI Chatbot",
-                        "id": "5afe16ed-5fd2-4552-a993-903bc9c32bb6",
-                        "is_public": true,
-                        "name": "Test",
-                        "openai_api_key": null,
-                        "organization_id": "123042b2-86e2-4184-a86e-95423d728815",
-                        "personality_config": {
-                          "style": "Test",
-                          "tone": "Test"
+                      "results": [
+                        {
+                          "content": "Title: What is OkChat.ai?\nChunk: 1\n\nQuestion: What is OkChat.ai?\n\nAnswer: OkChat.ai is an AI chatbot platform designed to help businesses improve operational efficiency and productivity. It allows you to create and deploy your own AI chatbot based on Large Language Models (LLMs).",
+                          "similarity": 0.718238916187158
                         },
-                        "settings": {
-                          "avatar": "https://alwiuiydhxcstgrluarg.supabase.co/storage/v1/object/public/chatbot/5afe16ed-5fd2-4552-a993-903bc9c32bb6/0aabc2ff-6aab-491b-8858-0d001acc167d.png",
-                          "greeting": "Hello! How can I assist you today?",
-                          "isRequestUserInfoEnabled": false,
-                          "isToolEnabled": true,
-                          "model": "gpt-4o",
-                          "prompt": "You are a helpful and friendly customer support agent.  Respond to user inquiries in a clear and concise manner.  Always strive to provide accurate and helpful information.",
-                          "snippet": {
-                            "header": "오케이챗 고객응대 챗봇",
-                            "logo": "https://dasomx.odoo.com/web/image/website/1/logo/DASOMX?unique=1aee356",
-                            "name": "Test",
-                            "primaryColor": "#9c2caa",
-                            "secondaryColor": "#60d7a9",
-                            "slogan": "Chat with us"
-                          }
+                        {
+                          "content": "Title: Quickstart - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nQuickstart\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n## [​](https://docs.okchat.ai/quickstart\\#introduction)  Introduction\n\nWelcome to OKCHAT.AI, an advanced platform designed to help you create and manage intelligent chatbots. With a wide range of features, including a robust knowledge base, seamless integrations, and comprehensive settings, OKCHAT.AI is your go-to solution for enhancing customer interactions.\n\n## [​](https://docs.okchat.ai/quickstart\\#getting-started)  Getting Started\n\n1. **Access Your Dashboard**: Log in to your OKCHAT.AI account and navigate to the dashboard to get an overview of your chatbot’s performance.\n\n2. **Create a New Chatbot**: If you haven’t already, start by creating a new chatbot. This can be done by selecting the “Create New” option on your dashboard.\n\n\n## [​](https://docs.okchat.ai/quickstart\\#configuring-the-knowledge-base)  Configuring the Knowledge Base\n\n1. **Add Essential Knowledge**:\n   - Navigate to the “Knowledge Base” section.\n   - Upload or input key information that your chatbot should know.\n   - Organize content into categories for easier management.\n2. **Training Data**:\n   - Use the “Training Data” section to teach your chatbot how to respond to specific queries.\n   - Input sample questions and desired answers to improve accuracy.\n\n## [​](https://docs.okchat.ai/quickstart\\#setting-up-integrations)  Setting Up Integrations\n\nSummary:\nThis section, titled \"Quickstart\" from the OKCHAT AI V2 Docs, provides an introduction to the platform and guides users through the initial steps of creating and configuring a chatbot, including accessing the dashboard, creating a new chatbot, and setting up the knowledge base and integrations.",
+                          "similarity": 0.999831
                         },
-                        "slug": "test-1",
-                        "updated_at": "2024-12-01T14:38:45.709025+00:00"
-                      }
+                        {
+                          "content": "Title: Introduction - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nIntroduction\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n# [​](https://docs.okchat.ai/introduction\\#welcome-to-okchat-ai-documentation)  Welcome to OKCHAT AI Documentation\n\nWelcome to the OKCHAT AI documentation, your comprehensive guide to mastering the OKCHAT AI platform. Whether you’re a developer, marketer, or support team member, this documentation is designed to help you unlock the full potential of OKCHAT AI, an advanced chatbot platform tailored to meet your needs.\n\n## [​](https://docs.okchat.ai/introduction\\#about-okchat-ai)  About OKCHAT AI\n\nOKCHAT AI is a powerful platform that enables you to create, customize, and deploy intelligent chatbots across various channels. With features like seamless social media integration, a wide range of plugins, and robust API access, OKCHAT AI offers a flexible solution for enhancing customer interactions and automating support processes.\n\n## [​](https://docs.okchat.ai/introduction\\#documentation-structure)  Documentation Structure\n\nThis documentation is organized into key sections to guide you through the journey of using OKCHAT AI:\n\n- **Get Started**: Begin here if you’re new to OKCHAT AI. Explore introductions, quickstart guides, and essential tutorials on knowledge bases, social media integration, chatbot widgets, and AI voice agents.\n\n- **Social Media**: Dive into detailed guides on integrating your chatbot with popular platforms like Facebook Messenger, Instagram, WhatsApp, Kakao, Line, and Naver Talk.\n\n- **Plugins**: Discover how to enhance your chatbot’s functionality with plugins for reservations, Discord, and Slack integrations.\n\nSummary:\nThis is the introduction section of the OKCHAT AI V2 Docs, providing an overview of the documentation structure and the OKCHAT AI platform. It introduces the platform's capabilities and guides users through key sections like 'Get Started', 'Social Media', and 'Plugins'.",
+                          "similarity": 1
+                        },
+                        {
+                          "content": "Title: Introduction - OKCHAT AI V2 Docs\nChunk: 1\n\nContent:\n[OKCHAT AI V2 Docs home page![light logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/black-bg.svg)![dark logo](https://mintlify.s3.us-west-1.amazonaws.com/dasomx/images/logo/primary.svg)](https://docs.okchat.ai/)\n\nSearch...\n\nCtrl K\n\nSearch...\n\nNavigation\n\nGet Started\n\nIntroduction\n\n[Documentation](https://docs.okchat.ai/introduction) [API Reference](https://docs.okchat.ai/api-reference/introduction)\n\n# [​](https://docs.okchat.ai/introduction\\#welcome-to-okchat-ai-documentation)  Welcome to OKCHAT AI Documentation\n\nWelcome to the OKCHAT AI documentation, your comprehensive guide to mastering the OKCHAT AI platform. Whether you’re a developer, marketer, or support team member, this documentation is designed to help you unlock the full potential of OKCHAT AI, an advanced chatbot platform tailored to meet your needs.\n\n## [​](https://docs.okchat.ai/introduction\\#about-okchat-ai)  About OKCHAT AI\n\nOKCHAT AI is a powerful platform that enables you to create, customize, and deploy intelligent chatbots across various channels. With features like seamless social media integration, a wide range of plugins, and robust API access, OKCHAT AI offers a flexible solution for enhancing customer interactions and automating support processes.\n\n## [​](https://docs.okchat.ai/introduction\\#documentation-structure)  Documentation Structure\n\nThis documentation is organized into key sections to guide you through the journey of using OKCHAT AI:\n\n- **Get Started**: Begin here if you’re new to OKCHAT AI. Explore introductions, quickstart guides, and essential tutorials on knowledge bases, social media integration, chatbot widgets, and AI voice agents.\n\n- **Social Media**: Dive into detailed guides on integrating your chatbot with popular platforms like Facebook Messenger, Instagram, WhatsApp, Kakao, Line, and Naver Talk.\n\n- **Plugins**: Discover how to enhance your chatbot’s functionality with plugins for reservations, Discord, and Slack integrations.\n\nSummary:\nThis is the introduction section of the OKCHAT AI V2 Docs, providing an overview of the documentation structure and the OKCHAT AI platform. It introduces the platform's capabilities and guides users through key sections like 'Get Started', 'Social Media', and 'Plugins'.",
+                          "similarity": 1
+                        },
+                        {
+                          "content": "Title: What can OkChat.ai do?\nChunk: 1\n\nQuestion: What can OkChat.ai do?\n\nAnswer: OkChat.ai can automate tasks, provide customer support, streamline processes, and assist employees with information retrieval. It understands natural language and can take actions within integrated systems.",
+                          "similarity": 0.641080556012444
+                        },
+                        {
+                          "content": "Title: Who is OkChat.ai for?\nChunk: 1\n\nQuestion: Who is OkChat.ai for?\n\nAnswer: OkChat.ai primarily targets small and medium-sized enterprises (SMEs) and the public sector that are interested in utilizing AI.",
+                          "similarity": 0.663983384368328
+                        },
+                        {
+                          "content": "Title: What are the key features of OkChat.ai?\nChunk: 1\n\nQuestion: What are the key features of OkChat.ai?\n\nAnswer: Key features include the ability to train chatbots with text input, file uploads, and web crawling. It also offers multilingual customer support.",
+                          "similarity": 0.642547290249264
+                        }
+                      ],
+                      "similarity_threshold_setting": 0.45,
+                      "status": "OK",
+                      "total_docs": 7
                     }
                   }
                 }
@@ -3733,7 +3698,7 @@
           "required": true,
           "schema": {
             "type": "string",
-            "example": ""
+            "example": "c95f17d4-e0bc-4a69-9aaa-9b7b5e6964bd"
           }
         }
       ]
@@ -3811,6 +3776,18 @@
                     "platform": "web",
                     "sessionToken": "sessionToken789"
                   }
+                },
+                "Chat Copy": {
+                  "value": {
+                    "messages": [
+                      {
+                        "content": "Tell me about the history of the internet.",
+                        "role": "user"
+                      }
+                    ],
+                    "platform": "web",
+                    "sessionToken": "sessionToken789"
+                  }
                 }
               }
             }
@@ -3818,7 +3795,7 @@
         },
         "responses": {
           "200": {
-            "description": "Non stream response / Stream Response",
+            "description": "Non stream response / Stream Response / Non stream response / Stream Response",
             "headers": {
               "Access-Control-Allow-Credentials": {
                 "schema": {
