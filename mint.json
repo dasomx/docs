@@ -58,7 +58,8 @@
         "guides/leads",
         "guides/tools",
         "guides/using-with-ollama-models",
-        "guides/using-mcp-servers"
+        "guides/using-mcp-servers",
+        "guides/telephony-integration"
       ]
     },
     {
