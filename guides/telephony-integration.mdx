@@ -1,0 +1,435 @@
+---
+title: "Telephony Integration"
+description: "Complete guide to integrating phone calling capabilities with your OKCHAT.AI voice assistant"
+icon: "phone"
+---
+
+## Overview
+
+The telephony integration in OKCHAT.AI enables your voice assistant to handle phone calls, allowing users to interact with your chatbot through traditional phone systems. This powerful feature extends your AI assistant's reach to users who prefer voice communication over text-based interactions.
+
+<Info>
+  Currently, OKCHAT.AI supports **inbound calling only**. Outbound calling
+  capabilities are planned for future releases.
+</Info>
+
+## Purpose and Benefits
+
+### Why Use Telephony Integration?
+
+<CardGroup cols={2}>
+  <Card title="Accessibility" icon="universal-access">
+    Make your AI assistant accessible to users who prefer phone calls or have
+    limited internet access
+  </Card>
+  <Card title="Business Applications" icon="building">
+    Perfect for customer support, appointment booking, information hotlines, and
+    automated assistance
+  </Card>
+  <Card title="Wider Reach" icon="globe">
+    Expand your service availability to traditional phone users and older
+    demographics
+  </Card>
+  <Card title="Natural Interaction" icon="comments">
+    Voice conversations feel more natural and personal than text-based
+    interactions
+  </Card>
+</CardGroup>
+
+### Key Use Cases
+
+- **Customer Support**: Provide 24/7 automated phone support
+- **Appointment Booking**: Handle scheduling through voice interactions
+- **Information Hotlines**: Create automated information services
+- **Lead Qualification**: Screen potential customers via phone
+- **Order Processing**: Accept orders through voice commands
+
+## Supported Telephony Providers
+
+OKCHAT.AI currently supports two types of telephony providers:
+
+### Twilio
+
+<Card title="Twilio" icon="phone" href="https://www.twilio.com">
+  **Global communications platform with extensive features** - ✅ Voice calls -
+  ✅ SMS capabilities - ✅ SIP support - ✅ Global coverage - ✅ Automatic
+  inbound configuration - ✅ No manual outbound setup required
+</Card>
+
+**Best for**: Businesses needing reliable, scalable phone services with global reach.
+
+### Custom SIP Providers
+
+<Card title="Custom SIP Trunk" icon="server">
+  **Import your own SIP trunk configuration** - ✅ Voice calls - ✅ SIP support
+  - ✅ Custom routing - ⚙️ Manual inbound configuration required - ⚙️ Manual
+  outbound configuration required
+</Card>
+
+**Best for**: Organizations with existing SIP infrastructure or specific provider requirements (ElevenLabs, Deepgram, etc.).
+
+<Note>
+  **Telnyx support** is planned for future releases and will provide modern
+  telecom infrastructure with real-time APIs.
+</Note>
+
+## Configuration Guide
+
+### Prerequisites
+
+Before setting up telephony integration, ensure you have:
+
+- An active OKCHAT.AI account with voice agent access
+- A configured voice assistant/chatbot
+- Phone number from a supported provider
+- Provider credentials (API keys, account information)
+
+### Step 1: Access Telephony Settings
+
+<Steps>
+  <Step title="Navigate to Voice Widget" stepNumber={1}>
+    Go to your chatbot dashboard and select the "Voice Widget" tab
+  </Step>
+  <Step title="Select Telephony Tab" stepNumber={2}>
+    Click on the "Telephony" tab to access phone number management
+  </Step>
+</Steps>
+
+### Step 2: Add Your Phone Number
+
+<Steps>
+  <Step title="Click 'Add Phone Number'" stepNumber={1}>
+    Select the "Add Phone Number" button to open the configuration modal
+  </Step>
+  <Step title="Choose Your Provider" stepNumber={2}>
+    Select either **Twilio** or **Custom SIP** as your telephony provider
+  </Step>
+  <Step title="Enter Phone Number Details" stepNumber={3}>
+    Fill in your phone number and provide a descriptive label
+  </Step>
+</Steps>
+
+### Step 3: Provider-Specific Configuration
+
+<Tabs>
+  <Tab title="Twilio Setup">
+    For Twilio integration, you'll need:
+
+    <ParamField path="Account SID" type="string" required>
+      Your Twilio Account SID (starts with "AC")
+    </ParamField>
+
+    <ParamField path="Auth Token" type="string" required>
+      Your Twilio Auth Token (keep this secure)
+    </ParamField>
+
+    <ParamField path="Phone Number" type="string" required>
+      Your Twilio phone number in E.164 format (e.g., +1234567890)
+    </ParamField>
+
+    ```bash Finding Your Twilio Credentials
+    1. Log into your Twilio Console
+    2. Navigate to Account > Account Info
+    3. Copy your Account SID and Auth Token
+    4. Ensure your phone number has voice capabilities enabled
+    ```
+
+  </Tab>
+
+  <Tab title="Custom SIP Setup">
+    For Custom SIP integration, you'll need:
+
+    <ParamField path="Phone Number" type="string" required>
+      Your phone number in E.164 format
+    </ParamField>
+
+    <ParamField path="Trunk Name" type="string">
+      Optional descriptive name for your SIP trunk
+    </ParamField>
+
+    <Alert icon="info">
+      **Important**: Configure your SIP provider to route calls to:
+      ```
+      sip:p0joaqk9k11.sip.livekit.cloud
+      ```
+      This is the OKChat origination URI for incoming calls.
+    </Alert>
+
+    **Supported SIP Providers:**
+    - ElevenLabs
+    - Deepgram
+    - Any SIP-compliant provider
+    - Custom telephony infrastructure
+
+  </Tab>
+</Tabs>
+
+### Step 4: Configure Inbound Calling
+
+After adding your phone number:
+
+<Steps>
+  <Step title="Setup Inbound" stepNumber={1}>
+    Click the "Setup Inbound" button next to your phone number
+  </Step>
+  <Step title="Automatic Configuration" stepNumber={2}>
+    OKChat will automatically configure the necessary webhooks and routing
+  </Step>
+  <Step title="Verify Status" stepNumber={3}>
+    Confirm the status shows "Inbound Ready" with a green indicator
+  </Step>
+</Steps>
+
+## Testing Your Integration
+
+### Basic Functionality Test
+
+<Steps>
+  <Step title="Make a Test Call" stepNumber={1}>
+    Call your configured phone number from any phone
+  </Step>
+  <Step title="Verify Connection" stepNumber={2}>
+    You should hear your voice assistant's greeting message
+  </Step>
+  <Step title="Test Conversation" stepNumber={3}>
+    Have a brief conversation to ensure proper voice recognition and response
+  </Step>
+  <Step title="Check Call Logs" stepNumber={4}>
+    Review call logs in your OKChat dashboard for any issues
+  </Step>
+</Steps>
+
+### Advanced Testing
+
+<AccordionGroup>
+  <Accordion title="Audio Quality Testing">
+    - Test from different phone types (mobile, landline, VoIP)
+    - Check audio clarity and latency
+    - Verify noise cancellation effectiveness
+    - Test volume levels and clarity
+  </Accordion>
+
+{" "}
+
+<Accordion title="Conversation Flow Testing">
+  - Test various conversation scenarios - Verify interruption handling - Check
+  knowledge base integration - Test function calling capabilities
+</Accordion>
+
+  <Accordion title="Load Testing">
+    - Test multiple simultaneous calls (if applicable)
+    - Monitor system performance under load
+    - Check call quality during peak usage
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+<AccordionGroup>
+  <Accordion title="Calls Not Connecting" icon="phone-slash">
+    **Symptoms**: Phone rings but doesn't connect to the voice assistant
+
+    **Possible Causes:**
+    - Incorrect webhook configuration
+    - Phone number not properly activated
+    - Provider API credentials invalid
+
+    **Solutions:**
+    1. Verify phone number status in dashboard
+    2. Re-run inbound setup process
+    3. Check provider account status and credentials
+    4. Ensure phone number has voice capabilities enabled
+
+  </Accordion>
+
+  <Accordion title="Poor Audio Quality" icon="volume-xmark">
+    **Symptoms**: Choppy audio, delays, or unclear speech
+
+    **Possible Causes:**
+    - Network connectivity issues
+    - Provider routing problems
+    - Codec compatibility issues
+
+    **Solutions:**
+    1. Test from different networks/locations
+    2. Contact your telephony provider
+    3. Check OKChat system status
+    4. Verify SIP configuration (for custom providers)
+
+  </Accordion>
+
+  <Accordion title="Voice Assistant Not Responding" icon="robot">
+    **Symptoms**: Call connects but assistant doesn't respond appropriately
+
+    **Possible Causes:**
+    - Voice recognition issues
+    - Configuration problems
+    - Knowledge base connectivity
+
+    **Solutions:**
+    1. Check voice assistant configuration
+    2. Verify knowledge base connection
+    3. Test with clear, simple commands
+    4. Review conversation logs for errors
+
+  </Accordion>
+
+  <Accordion title="Authentication Errors" icon="lock">
+    **Symptoms**: Setup fails with authentication errors
+
+    **Possible Causes:**
+    - Invalid API credentials
+    - Expired tokens
+    - Insufficient permissions
+
+    **Solutions:**
+    1. Verify API credentials are correct
+    2. Check account permissions with provider
+    3. Regenerate tokens if necessary
+    4. Ensure account is in good standing
+
+  </Accordion>
+</AccordionGroup>
+
+### Debug Checklist
+
+<Steps>
+  <Step title="Verify Phone Number Configuration" stepNumber={1}>
+    - ✅ Phone number format is correct (E.164) - ✅ Provider credentials are
+    valid - ✅ Phone number has voice capabilities - ✅ Status shows "Inbound
+    Ready"
+  </Step>
+  <Step title="Check Provider Settings" stepNumber={2}>
+    - ✅ Twilio webhooks are configured - ✅ SIP routing is properly set up - ✅
+    Account has sufficient credits/balance - ✅ No service outages reported
+  </Step>
+  <Step title="Test Voice Assistant" stepNumber={3}>
+    - ✅ Voice widget works via web interface - ✅ Knowledge base is properly
+    connected - ✅ Voice recognition settings are optimal - ✅ Response
+    generation is functioning
+  </Step>
+  <Step title="Network and Infrastructure" stepNumber={4}>
+    - ✅ No firewall blocking SIP traffic - ✅ DNS resolution working properly -
+    ✅ Network latency is acceptable - ✅ OKChat services are operational
+  </Step>
+</Steps>
+
+## Monitoring and Analytics
+
+### Call Analytics
+
+Monitor your telephony integration performance through:
+
+- **Call Volume**: Track number of inbound calls
+- **Call Duration**: Average conversation length
+- **Success Rate**: Percentage of successful call completions
+- **User Satisfaction**: Track conversation quality metrics
+
+### Performance Metrics
+
+<CardGroup cols={2}>
+  <Card title="Audio Quality" icon="waveform">
+    Monitor latency, clarity, and connection stability
+  </Card>
+  <Card title="Response Accuracy" icon="bullseye">
+    Track how well the assistant understands and responds
+  </Card>
+  <Card title="Completion Rate" icon="check-circle">
+    Percentage of calls that achieve their intended purpose
+  </Card>
+  <Card title="Error Rates" icon="exclamation-triangle">
+    Monitor and address technical issues promptly
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+### Voice Assistant Optimization
+
+<Tip>
+  **Optimize for Phone Conversations**: Phone calls have different dynamics than
+  web chats. Keep responses concise and clear.
+</Tip>
+
+- Use clear, conversational language
+- Keep responses under 30 seconds when possible
+- Provide clear menu options for complex workflows
+- Include confirmation steps for important actions
+- Handle background noise gracefully
+
+### Security Considerations
+
+<Warning>
+  **Protect Sensitive Information**: Be cautious about handling sensitive data
+  over phone calls.
+</Warning>
+
+- Never store or transmit credit card information
+- Implement caller verification for sensitive operations
+- Use secure, encrypted connections
+- Regularly rotate API keys and credentials
+- Monitor for suspicious calling patterns
+
+## Getting Support
+
+### Self-Help Resources
+
+<CardGroup cols={2}>
+  <Card title="Documentation" icon="book" href="/guides">
+    Comprehensive guides and API documentation
+  </Card>
+  <Card title="Community Forum" icon="comments" href="#">
+    Connect with other OKCHAT.AI users and developers
+  </Card>
+  <Card title="Video Tutorials" icon="play" href="#">
+    Step-by-step video guides for common tasks
+  </Card>
+  <Card title="FAQ" icon="question-circle" href="#">
+    Frequently asked questions and quick answers
+  </Card>
+</CardGroup>
+
+### Direct Support
+
+For technical issues or complex integrations:
+
+<Steps>
+  <Step title="Check System Status" stepNumber={1}>
+    Visit our status page to verify service availability
+  </Step>
+  <Step title="Gather Information" stepNumber={2}>
+    Collect relevant details: - Phone number experiencing issues - Error
+    messages or codes - Time and date of incidents - Steps to reproduce the
+    problem
+  </Step>
+  <Step title="Contact Support" stepNumber={3}>
+    - **Email**: support@okchat.ai - **Priority Support**: Available for
+    enterprise customers - **Response Time**: 24-48 hours for standard support
+  </Step>
+</Steps>
+
+### Provider-Specific Support
+
+For provider-related issues:
+
+<Tabs>
+  <Tab title="Twilio Issues">
+    - **Twilio Support**: https://support.twilio.com - **Documentation**:
+    https://docs.twilio.com - **Status Page**: https://status.twilio.com
+  </Tab>
+  <Tab title="Custom SIP Issues">
+    - Contact your SIP provider directly - Verify SIP trunk configuration -
+    Check provider-specific documentation - Ensure proper routing to OKChat
+    endpoints
+  </Tab>
+</Tabs>
+
+---
+
+<Note>
+  This guide covers the current implementation of telephony integration.
+  Features and capabilities may expand in future releases. For the latest
+  updates, please refer to our changelog and release notes.
+</Note>
