@@ -36,12 +36,12 @@ make sure you expose to appropriate ports via ngrok or similar tools.
 
 ### Configuration Steps
 
-1. **Get the SSE Endpoint**:
+1. **Get the HTTP streaming endpoint**:
 
    - Visit [mcp.composio.dev](https://mcp.composio.dev)
    - Select your desired service
-   - Choose "Cursor" as your platform
-   - Copy the generated SSE endpoint URL (Only need to copy the URL, not the whole command)
+   - Choose "HTTP" as your platform
+   - Copy the generated HTTP streaming endpoint URL (Only need to copy the URL, not the whole command)
 
 2. **Using a custom local server**:
 
@@ -52,7 +52,7 @@ make sure you expose to appropriate ports via ngrok or similar tools.
 
 3. **Install the Server**:
 
-   - Paste the SSE endpoint URL in the installation dialog
+   - Paste the HTTP streaming endpoint URL in the installation dialog
    - Configure server settings:
      - **Active**: Enable/disable the server
 
@@ -61,7 +61,7 @@ make sure you expose to appropriate ports via ngrok or similar tools.
 For services requiring authentication (e.g., Google Sheets, Google Calendar):
 
 1. Click "Install" on the service
-2. Enter the SSE endpoint URL
+2. Enter the HTTP streaming endpoint URL
 3. The authentication will be automatically associated with the URL
 4. Simply chat with the chatbot to authenticate, for example ("authenticate with google sheets")
 5. Visit the URL provided by the chatbot to complete the authentication process
@@ -148,7 +148,7 @@ For services requiring authentication (e.g., Google Sheets, Google Calendar):
 
 1. **Connection Problems**:
 
-   - Verify the SSE endpoint URL
+   - Verify the HTTP streaming endpoint URL
    - Check server status at mcp.composio.dev
    - Ensure authentication is valid
 
