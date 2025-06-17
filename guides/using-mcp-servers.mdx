@@ -1,6 +1,6 @@
 ---
-title: Model Context Protocol (MCP) Servers Guide (Coming Soon)
-description: Model Context Protocol (MCP) servers extend your chatbot's capabilities by connecting it to external services and data sources. This guide explains how to set up and use MCP servers in your chatbot.
+title: Model Context Protocol (MCP) (in development)
+description: Model Context Protocol (MCP) servers extend your chatbot's capabilities by connecting it to external services and data sources. This guide explains how to set up and use MCP servers in your chatbot with the recommended Zapier MCP Hub integration.
 ---
 
 ## Understanding MCP Servers
@@ -13,28 +13,53 @@ MCP servers act as bridges between your chatbot and external services, allowing 
 
 ## Server Types
 
-### SSE (Server-Sent Events) Servers
+### Streamable HTTP (Recommended)
 
-- Most MCP servers use SSE for real-time communication
-- Require an endpoint URL from mcp.composio.dev
-- Support various services like Google Sheets, Airtable, Trello, etc.
+- **Recommended method** for connecting MCP servers
+- Uses HTTP streaming for real-time communication
+- Supported by [Zapier MCP Hub](https://mcp.zapier.com/) (Recommended)
+- Also available through mcp.composio.dev
+- Easy setup with pre-configured endpoints
+- Better performance and reliability
 
-### Command-based Local Servers
+### Server-Sent Events (SSE)
 
-Run an MCP SSE proxy to turn your local MCP server into a remote one. This
-[example repo](https://github.com/sparfenyuk/mcp-proxy) shows you how to run an MCP proxy to turn a local MCP server
-into a remote / SSE MCP server. If you follow this route, you will need to
-make sure you expose to appropriate ports via ngrok or similar tools.
+- Alternative connection method
+- Real-time communication via SSE protocol
+- Requires manual endpoint configuration
+- Good for custom implementations
 
 ## Setting Up MCP Servers
 
 ### Getting Started
 
 1. Navigate to your chatbot's MCP Servers page
-2. Browse available server templates
-3. Click "Install" on your desired server
+2. Browse available server templates or add a custom server
+3. Choose your preferred connection method
 
-### Configuration Steps
+### Configuration Options
+
+#### Option 1: Zapier MCP Hub (Recommended)
+
+1. **Visit [Zapier MCP Hub](https://mcp.zapier.com/)**:
+
+   - Easy-to-use interface for creating MCP endpoints
+   - Pre-configured templates for popular services
+   - Streamlined authentication process
+   - **Recommended for most users**
+
+2. **Get your endpoint**:
+
+   - Select your desired service integration
+   - Follow the setup wizard
+   - Copy the generated HTTP streaming endpoint URL
+
+3. **Install in your chatbot**:
+   - Paste the endpoint URL in the server configuration
+   - Set the server type to "Streamable HTTP (Recommended)"
+   - Activate the server
+
+#### Option 2: Composio MCP Servers
 
 1. **Get the HTTP streaming endpoint**:
 
@@ -43,22 +68,33 @@ make sure you expose to appropriate ports via ngrok or similar tools.
    - Choose "HTTP" as your platform
    - Copy the generated HTTP streaming endpoint URL
 
-2. **Using a custom local server**:
-
-   Run an MCP SSE proxy to turn your local MCP server into a remote one. This
-   [example repo](https://github.com/sparfenyuk/mcp-proxy) shows you how to run an MCP proxy to turn a local MCP server
-   into a remote / SSE MCP server. If you follow this route, you will need to
-   make sure you expose to appropriate ports via ngrok or similar tools.
-
-3. **Install the Server**:
-
+2. **Install the Server**:
    - Paste the HTTP streaming endpoint URL in the installation dialog
    - Configure server settings:
+     - **Type**: Choose "Streamable HTTP (Recommended)" or "Server-Sent Events (SSE)"
      - **Active**: Enable/disable the server
+
+#### Option 3: Custom Local Servers
+
+For advanced users who want to run local MCP servers:
+
+Run an MCP SSE proxy to turn your local MCP server into a remote one. This
+[example repo](https://github.com/sparfenyuk/mcp-proxy) shows you how to run an MCP proxy to turn a local MCP server
+into a remote / SSE MCP server. If you follow this route, you will need to
+make sure you expose to appropriate ports via ngrok or similar tools.
 
 ### Authentication
 
 For services requiring authentication (e.g., Google Sheets, Google Calendar):
+
+#### Using Zapier MCP Hub (Recommended)
+
+1. Authentication is handled during the Zapier setup process
+2. Follow the authentication flow in the Zapier interface
+3. Your credentials are securely managed by Zapier
+4. Simply use the generated endpoint URL in your chatbot
+
+#### Using Composio or Custom Endpoints
 
 1. Click "Install" on the service
 2. Enter the HTTP streaming endpoint URL
@@ -96,51 +132,39 @@ For services requiring authentication (e.g., Google Sheets, Google Calendar):
 
 1. **Server Management**:
 
+   - **Use Zapier MCP Hub when possible** - it's the most user-friendly option
+   - Choose "Streamable HTTP (Recommended)" for better performance
    - Keep only necessary servers active
    - Regularly review and update server configurations
    - Test server connections after setup
 
 2. **Security**:
 
+   - Prefer Zapier MCP Hub for secure credential management
    - Use authenticated endpoints for sensitive data
    - Keep authentication credentials secure
    - Review public/private settings regularly
 
 3. **Performance**:
+   - Streamable HTTP typically offers better performance than SSE
    - Monitor server response times
    - Deactivate unused servers
    - Use appropriate rate limits
 
-## Available MCP Servers
+## Quick Start Guide
 
-### Google Sheets
+For the fastest setup experience:
 
-- Store and retrieve data from spreadsheets
-- Real-time updates and modifications
-- Requires Google authentication
-
-### Airtable
-
-- Connect to Airtable bases
-- Access and modify records
-- Real-time database operations
-
-### Trello
-
-- Manage boards and cards
-- Track tasks and projects
-- Real-time updates
-
-### Google Calendar
-
-- Manage events and schedules
-- Set reminders
-- Check availability
-
-### And More
-
-- Additional servers are regularly added
-- Check the templates page for the latest options
+1. **Visit [Zapier MCP Hub](https://mcp.zapier.com/) (Recommended)**
+2. **Choose your service** (Google Sheets, Trello, etc.)
+3. **Follow the setup wizard** to create your endpoint
+4. **Copy the generated URL**
+5. **Go to your chatbot's MCP Servers page**
+6. **Click "Add MCP Server"**
+7. **Select "Streamable HTTP (Recommended)" as the type**
+8. **Paste your Zapier endpoint URL**
+9. **Activate the server**
+10. **Start chatting!**
 
 ## Troubleshooting
 
@@ -148,17 +172,25 @@ For services requiring authentication (e.g., Google Sheets, Google Calendar):
 
 1. **Connection Problems**:
 
-   - Verify the HTTP streaming endpoint URL
-   - Check server status at mcp.composio.dev
-   - Ensure authentication is valid
+   - **For Zapier endpoints**: Check your Zapier account and endpoint status
+   - **For Composio endpoints**: Verify the HTTP streaming endpoint URL and check server status at mcp.composio.dev
+   - Ensure the server type matches your endpoint (Streamable HTTP vs SSE)
+   - Verify the server is activated in your chatbot settings
 
 2. **Authentication Errors**:
 
-   - Re-authenticate the service
-   - Check permission settings
-   - Verify API access
+   - **Zapier**: Re-authenticate through the Zapier interface
+   - **Composio**: Re-authenticate the service and check permission settings
+   - Verify API access and rate limits
 
 3. **Performance Issues**:
-   - Review active server count
-   - Check server logs
-   - Monitor rate limits
+
+   - Try switching to "Streamable HTTP" if using SSE
+   - Review active server count (max 3 active)
+   - Check server logs and monitor rate limits
+   - Consider using Zapier MCP Hub for better reliability
+
+4. **Server Type Issues**:
+   - Use "Streamable HTTP (Recommended)" for new setups
+   - Legacy SSE servers can be updated to Streamable HTTP
+   - Check endpoint compatibility with your chosen server type
