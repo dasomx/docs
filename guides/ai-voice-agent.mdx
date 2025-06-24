@@ -25,30 +25,31 @@ The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based 
 
 ## Key Features
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
   <Card title="Voice Interaction" icon="microphone">
     Users can speak to the chatbot, and the AI Voice Agent will respond with
     voice output.
   </Card>
   <Card title="Advanced Turn Detection" icon="language">
-    Detects when a user is speaking and supports both English and Multilingual
-    turn detection.
+    Detects when a user is speaking and supports English, Multilingual, and
+    Push-to-Talk detection.
   </Card>
   <Card title="Customizable Voice Widget" icon="sliders">
-    Customize the appearance, voice, and behavior of the voice widget to match
-    your brand.
+    Customize the appearance, text, voice, and behavior of the voice widget to
+    match your brand.
   </Card>
   <Card title="Real-Time Speech Recognition" icon="waveform">
     Uses advanced speech recognition to understand and process user commands.
   </Card>
-  <Card title="Dynamic Responses" icon="bolt">
-    Provides real-time, context-aware responses based on user input.
+  <Card title="Flexible Provider Selection" icon="puzzle">
+    Choose from a wide range of LLM, Text-to-Speech (TTS), and Speech-to-Text
+    (STT) providers.
   </Card>
   <Card title="Voice Activity Detection (VAD)" icon="volume">
     Uses voice activity detection to process user commands efficiently.
   </Card>
-  <Card title="Custom Greetings" icon="hand-wave">
-    Set custom greetings for the AI Voice Agent.
+  <Card title="Telephony Integration" icon="phone">
+    Integrate your voice agent with phone systems for seamless communication.
   </Card>
   <Card title="Default Tools" icon="toolbox">
     Web search, URL scraping, weather, and knowledge base search are available
@@ -60,22 +61,30 @@ The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based 
 
 ## Providers
 
-<CardGroup cols={2}>
+OKChat AI's Voice Agent supports multiple providers to give you maximum flexibility.
+
+<CardGroup cols={3}>
   <Card title="OpenAI Realtime" icon="robot">
-    Uses OpenAI's realtime API with OKChat's knowledge base and tools.
+    Uses OpenAI's realtime API with OKChat's knowledge base and tools for fast
+    interactions.
     <br />
-    <b>Features:</b> Different voices, keyword detection, voice vibe.
+    <b>Features:</b> Various voices, keyword detection, voice vibe.
   </Card>
   <Card title="Gemini Live" icon="google">
-    Uses Google's Gemini API for seamless voice experience.
+    Uses Google's Gemini API for a seamless voice experience.
     <br />
-    <b>Features:</b> Different voices, keyword detection, voice vibe.
+    <b>Features:</b> Various voices, keyword detection, voice vibe.
   </Card>
   <Card title="OKCHAT Provider (Recommended)" icon="star">
-    Uses OKChat's own pipeline, optimized for the platform.
+    The most flexible option, using OKChat's own pipeline, optimized for the
+    platform. It allows you to mix and match different providers for core
+    functionalities.
     <br />
-    <b>Features:</b> Different voices, LLM model selection, TTS/STT model
-    selection, keyword detection, voice vibe.
+    <b>LLM Providers:</b> OpenAI, Google, Groq, and more.
+    <br />
+    <b>TTS Providers:</b> OpenAI, Google, ElevenLabs, Deepgram, Cartesia.
+    <br />
+    <b>STT Providers:</b> OpenAI, Deepgram, Speechmatics, Groq, Google.
   </Card>
 </CardGroup>
 
@@ -83,93 +92,76 @@ The AI Voice Agent is an advanced feature in OKChat AI that enables voice-based 
 
 ## Getting Started with AI Voice Agent
 
-<Steps>
-  <Step title="Accessing the AI Voice Agent">
-    Log in to your OKChat AI dashboard.
-    <br />
-    Navigate to the <b>AI Voice Agent</b> section under <b>Integration</b>.
-    <br />
-    If you do not see this option, contact{" "}
-    <a href="mailto:info@dasomx.com">info@dasomx.com</a> to request access.
-  </Step>
-  <Step title="Configuring the Voice Agent">
-    <ul>
-      <li>
-        <b>System Prompt:</b> Set the system prompt for the AI Voice Agent.
-      </li>
-      <li>
-        <b>Provider:</b> Choose the provider for the AI Voice Agent.
-      </li>
-      <li>
-        <b>Model:</b> Choose the model for the AI Voice Agent.
-      </li>
-      <li>
-        <b>Turn Detection:</b> Choose the turn detection method.
-      </li>
-      <li>
-        <b>STT/TTS Model:</b> Choose the STT/TTS model for the AI Voice Agent.
-      </li>
-      <li>
-        <b>Language:</b> Choose the language for the AI Voice Agent or
-        <b>Auto</b> to detect the language automatically.
-      </li>
-      <li>
-        <b>Voice:</b> Select the voice type and tone from various providers.
-      </li>
-      <li>
-        <b>Keyword Detection:</b> Set keywords for the AI Voice Agent to listen
-        to.
-      </li>
-      <li>
-        <b>Voice Vibe:</b> Choose the voice vibe.
-      </li>
-      <li>
-        <b>Greetings:</b> Set custom greetings.
-      </li>
-      <li>
-        <b>Avatar, Text, Appearance:</b> Customize the widget's look and feel.
-      </li>
-    </ul>
-  </Step>
-  <Step title="Voice Activity Detection (VAD) Settings">
-    <ul>
-      <li>
-        <b>VAD Threshold:</b> Adjust sensitivity (default: 0.5).
-      </li>
-      <li>
-        <b>Prefix Padding (ms):</b> Minimum speech duration to start a chunk
-        (default: 500ms).
-      </li>
-      <li>
-        <b>Silence Duration (ms):</b> Minimum silence before ending a segment
-        (default: 1000ms).
-      </li>
-    </ul>
-  </Step>
-  <Step title="Response Settings">
-    <ul>
-      <li>
-        <b>Temperature:</b> Adjust response randomness (default: 0.7).
-      </li>
-      <li>
-        <b>Max Output Tokens:</b> Limit response length (default: 2048 tokens).
-      </li>
-    </ul>
-  </Step>
-  <Step title="Embedding the Voice Widget">
-    Copy the embed code from the widget configuration and paste it into your
-    website's HTML.
-    <br />
-    <CodeGroup>
-      ```html
-      <script
-        src="http://localhost:3000/chatbot-voice-widget.js"
-        data-chatbot-id="5afe16ed-5fd2-4552-a993-903bc9c32bb6"
-      ></script>
-      ```
-    </CodeGroup>
-  </Step>
-</Steps>
+## Getting Started Steps
+
+### 1. Accessing the AI Voice Agent
+
+Log in to your OKChat AI dashboard.
+
+Navigate to the **AI Voice Agent** section under **Integration**.
+
+If you do not see this option, contact [info@dasomx.com](mailto:info@dasomx.com) to request access.
+
+### 2. General Configuration
+
+In the **General** tab, you can configure the core behavior of your voice agent.
+
+- **Prompt:** Set the system prompt to define the agent's personality and instructions.
+- **Voice Provider:** Choose between **OKCHAT (Recommended)**, **OpenAI Realtime**, or **Gemini Live**. The OKCHAT provider offers the most customization options.
+- **LLM Provider (OKCHAT only):** If you chose the OKCHAT provider, select an underlying Large Language Model (LLM) provider like OpenAI, Google, or Groq.
+- **Model:** Choose the specific model for the selected provider (e.g., `gpt-4o`, `gemini-2.0-flash`).
+- **Turn Detector:** Select how the agent detects user speech: **English**, **Multilingual**, or **Push To Talk** (deprecated).
+- **TTS Provider (OKCHAT only):** Choose a Text-to-Speech provider like OpenAI, Google, ElevenLabs, Deepgram, or Cartesia to generate the agent's voice.
+- **Choose AI Voice:** Select a specific voice from the chosen TTS provider's library.
+- **STT Provider:** Select a Speech-to-Text provider like OpenAI, Deepgram, Speechmatics, Groq, or Google for transcription.
+- **STT Model:** Choose the specific transcription model.
+- **Language:** Enable **Auto-detect language** or manually specify language codes (e.g., `en` for ISO 639-1, `en-US` for BCP-47, depending on the STT provider).
+- **Keywords:** Provide a comma-separated list of domain-specific keywords to improve speech recognition accuracy.
+- **Greeting Message:** Set the initial message the agent speaks when a conversation starts.
+- **Voice Vibe:** Describe the desired personality, tone, and speaking style for the AI voice, particularly for OpenAI voices.
+
+### 3. Appearance, Text, and Avatar
+
+Customize the visual aspects of your voice widget.
+
+- **Appearance Tab:** Adjust colors (background, text, button), radius for cards and buttons, and the widget's on-screen **position** (`bottom-right`, `top-left`, etc.). You can also choose to hide the "Powered by OKCHAT.AI" watermark.
+- **Text Tab:** Customize the text for buttons and status indicators like "Start call" or "Listening...".
+- **Avatar Tab:** Upload a custom image to be used as the agent's avatar.
+
+### 4. Advanced Configuration
+
+Fine-tune the agent's performance from the **Config** tab.
+
+- **VAD Threshold:** Adjust VAD sensitivity (0-1). Lower is more sensitive. Default: 0.5.
+- **Prefix Padding (ms):** Minimum speech duration to start a chunk. Default: 500ms.
+- **Silence Duration (ms):** Minimum silence before ending a segment. Default: 1000ms.
+- **Temperature:** Adjust response randomness (0-1). Higher is more random. Default: 0.7.
+- **Max Output Tokens:** Limit response length. Default: 2048 tokens.
+
+### 5. Kiosk Mode
+
+Configure a full-screen voice agent experience, ideal for public displays.
+
+- Enable **Kiosk Mode** from the **Kiosk** tab.
+- Customize the **Onboarding Screen** with a title, description, instructions, and brand colors.
+- Upload a mascot image and set the button text.
+- Use the provided **Kiosk URL** to launch the agent in a browser.
+
+### 6. Telephony Integration
+
+Connect your voice agent to phone lines from the **Telephony** tab. This allows users to call in and interact with your AI agent over the phone.
+
+### 7. Embedding the Voice Widget
+
+Copy the embed code from the bottom of the configuration page and paste it into your website's HTML. The `data-position` attribute can be configured in the Appearance tab.
+
+```html
+<script
+  src="https://v2.okchat.ai/chatbot-voice-widget.js"
+  data-chatbot-id="YOUR_CHATBOT_ID"
+  data-position="bottom-right"
+></script>
+```
 
 ---
 
