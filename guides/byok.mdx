@@ -1,0 +1,79 @@
+---
+title: "Bring Your Own Key (BYOK)"
+description: "Configure AI service providers with your own API keys for greater control and to leverage your existing plans."
+---
+
+Welcome to the Bring Your Own Key (BYOK) guide for OKCHAT.AI. This feature allows you to connect your own API keys from various AI service providers directly into our platform.
+
+## Introduction
+
+By using your own API keys, you can take advantage of your existing subscriptions and usage limits with providers like OpenAI, Anthropic, Google AI, and more. This provides greater flexibility and can be more cost-effective if you have existing plans with these services.
+
+All keys are stored securely using AES-256 encryption.
+
+## Navigating to the BYOK Page
+
+You can find the BYOK settings in your organization's dashboard.
+
+1.  Go to **Dashboard**.
+2.  Select the **Organization** you want to configure.
+3.  In the sidebar, navigate to **BYOK**.
+
+## Enabling BYOK
+
+Before you can add your own keys, you must first enable the BYOK feature for your organization.
+
+1.  On the BYOK page, you will see a toggle switch labeled **"Use Your Own Keys"**.
+2.  Click the toggle to enable it. This will reveal the configuration options for different providers.
+
+<Warning>
+  When the **"Use Your Own Keys"** toggle is enabled, the platform will **only**
+  use the API keys you provide. If a key is missing or invalid, the
+  corresponding service will not be available. There is no fallback to
+  system-wide API keys.
+</Warning>
+
+## Adding and Saving an API Key
+
+Once BYOK is enabled, the page will display a card for each supported provider.
+
+1.  **Enter Your Key**: Find the provider you want to configure and paste your API key into the input field. The key will be hidden by default. You can click the eye icon to toggle its visibility.
+2.  **Test Connection**: Before saving, it's highly recommended to test the key. Click the **Test Connection** button. A successful test will show a "Connected successfully" message. If it fails, double-check your key and try again.
+3.  **Save Configuration**: After adding all your desired keys, click the **Save Configuration** button at the top of the page. This will encrypt and save all the keys you've entered.
+
+<Note>
+  You must click "Save Configuration" for your keys to be stored and used by the
+  platform. Simply testing the connection or enabling the main toggle will not
+  save the individual keys.
+</Note>
+
+## Removing an API Key
+
+If you want to stop using your own key for a provider, you can easily remove it.
+
+1.  **Find the Provider**: Locate the card for the provider whose key you want to remove.
+2.  **Click Remove**: If a key is already saved for that provider, a "Remove" button with a trash icon will be visible. Click it to delete the key from our system.
+3.  **Save Changes**: Click the **Save Configuration** button again to confirm the removal.
+
+## Disabling BYOK
+
+To revert to using the platform's default API keys, simply disable the **"Use Your Own Keys"** toggle at the top of the page. This will deactivate all your saved keys for this organization.
+
+## Configuring Models with BYOK
+
+When BYOK is enabled, you must ensure that any LLMs you want to use have a corresponding API key configured. You can manage which models are available from the **LLM Models** page in your organization's settings.
+
+1.  **Navigate to LLM Models**: In the sidebar, go to **LLM Models**.
+2.  **Add, Enable, or Disable Models**: You can add new models, and enable or disable existing ones using the toggles.
+3.  **Save Changes**: Click **Save Changes** to apply your configuration.
+
+<Warning>
+  On the **LLM Models** page, the "Save Changes" button will be disabled if any
+  of your **enabled** models belong to a provider for which you have not yet
+  configured an API key on this BYOK page. An alert will direct you back here to
+  add the required keys.
+</Warning>
+
+## Security Notice
+
+Your API keys are important. We encrypt every key using the AES-256 standard before storing it in our database. The keys are only decrypted when they need to be used to make requests to the respective AI services on your behalf. You can revoke access at any time by removing the keys from this page or by deactivating the keys in your provider's dashboard.
